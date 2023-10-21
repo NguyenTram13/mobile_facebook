@@ -24,141 +24,194 @@ class FFAppState extends ChangeNotifier {
     notifyListeners();
   }
 
-  dynamic _setting;
-  dynamic get setting => _setting;
-  set setting(dynamic _value) {
-    _setting = _value;
+  String _accessToken = '';
+  String get accessToken => _accessToken;
+  set accessToken(String _value) {
+    _accessToken = _value;
   }
 
-  String _currency = '\$';
-  String get currency => _currency;
-  set currency(String _value) {
-    _currency = _value;
+  int _idUser = 0;
+  int get idUser => _idUser;
+  set idUser(int _value) {
+    _idUser = _value;
   }
 
-  String _formatStyle = '0';
-  String get formatStyle => _formatStyle;
-  set formatStyle(String _value) {
-    _formatStyle = _value;
+  dynamic _resProfile;
+  dynamic get resProfile => _resProfile;
+  set resProfile(dynamic _value) {
+    _resProfile = _value;
   }
 
-  dynamic _settingsOfFormatter;
-  dynamic get settingsOfFormatter => _settingsOfFormatter;
-  set settingsOfFormatter(dynamic _value) {
-    _settingsOfFormatter = _value;
+  List<dynamic> _resPostHome = [];
+  List<dynamic> get resPostHome => _resPostHome;
+  set resPostHome(List<dynamic> _value) {
+    _resPostHome = _value;
   }
 
-  List<dynamic> _currencys = [];
-  List<dynamic> get currencys => _currencys;
-  set currencys(List<dynamic> _value) {
-    _currencys = _value;
+  void addToResPostHome(dynamic _value) {
+    _resPostHome.add(_value);
   }
 
-  void addToCurrencys(dynamic _value) {
-    _currencys.add(_value);
+  void removeFromResPostHome(dynamic _value) {
+    _resPostHome.remove(_value);
   }
 
-  void removeFromCurrencys(dynamic _value) {
-    _currencys.remove(_value);
+  void removeAtIndexFromResPostHome(int _index) {
+    _resPostHome.removeAt(_index);
   }
 
-  void removeAtIndexFromCurrencys(int _index) {
-    _currencys.removeAt(_index);
-  }
-
-  void updateCurrencysAtIndex(
+  void updateResPostHomeAtIndex(
     int _index,
     dynamic Function(dynamic) updateFn,
   ) {
-    _currencys[_index] = updateFn(_currencys[_index]);
+    _resPostHome[_index] = updateFn(_resPostHome[_index]);
   }
 
-  void insertAtIndexInCurrencys(int _index, dynamic _value) {
-    _currencys.insert(_index, _value);
+  void insertAtIndexInResPostHome(int _index, dynamic _value) {
+    _resPostHome.insert(_index, _value);
   }
 
-  String _lang = 'en';
-  String get lang => _lang;
-  set lang(String _value) {
-    _lang = _value;
+  String _avatarDefault =
+      'https://res.cloudinary.com/dmeyrzzjp/image/upload/v1695739770/doraemon_fyestv.jpg';
+  String get avatarDefault => _avatarDefault;
+  set avatarDefault(String _value) {
+    _avatarDefault = _value;
   }
 
-  String _unitDirection = 'left';
-  String get unitDirection => _unitDirection;
-  set unitDirection(String _value) {
-    _unitDirection = _value;
+  String _backgroundDefault =
+      'https://res.cloudinary.com/dmeyrzzjp/image/upload/v1695569923/home/cffi5e35l6al7ygkihm6.jpg';
+  String get backgroundDefault => _backgroundDefault;
+  set backgroundDefault(String _value) {
+    _backgroundDefault = _value;
   }
 
-  String _formatStylee = '';
-  String get formatStylee => _formatStylee;
-  set formatStylee(String _value) {
-    _formatStylee = _value;
+  dynamic _resProfilePage;
+  dynamic get resProfilePage => _resProfilePage;
+  set resProfilePage(dynamic _value) {
+    _resProfilePage = _value;
   }
 
-  String _domain = 'https://q-quantummania-cms.dev-tn.com';
-  String get domain => _domain;
-  set domain(String _value) {
-    _domain = _value;
+  int _idDetailUser = 0;
+  int get idDetailUser => _idDetailUser;
+  set idDetailUser(int _value) {
+    _idDetailUser = _value;
   }
 
-  bool _display = false;
-  bool get display => _display;
-  set display(bool _value) {
-    _display = _value;
+  List<dynamic> _friendProfile = [];
+  List<dynamic> get friendProfile => _friendProfile;
+  set friendProfile(List<dynamic> _value) {
+    _friendProfile = _value;
   }
 
-  dynamic _responseSettingGraphql;
-  dynamic get responseSettingGraphql => _responseSettingGraphql;
-  set responseSettingGraphql(dynamic _value) {
-    _responseSettingGraphql = _value;
+  void addToFriendProfile(dynamic _value) {
+    _friendProfile.add(_value);
   }
 
-  dynamic _responseSettingFormatter;
-  dynamic get responseSettingFormatter => _responseSettingFormatter;
-  set responseSettingFormatter(dynamic _value) {
-    _responseSettingFormatter = _value;
+  void removeFromFriendProfile(dynamic _value) {
+    _friendProfile.remove(_value);
   }
 
-  dynamic _responseSettingStyle;
-  dynamic get responseSettingStyle => _responseSettingStyle;
-  set responseSettingStyle(dynamic _value) {
-    _responseSettingStyle = _value;
+  void removeAtIndexFromFriendProfile(int _index) {
+    _friendProfile.removeAt(_index);
   }
 
-  dynamic _settingLayout;
-  dynamic get settingLayout => _settingLayout;
-  set settingLayout(dynamic _value) {
-    _settingLayout = _value;
+  void updateFriendProfileAtIndex(
+    int _index,
+    dynamic Function(dynamic) updateFn,
+  ) {
+    _friendProfile[_index] = updateFn(_friendProfile[_index]);
   }
 
-  dynamic _optionSelectedFormatter;
-  dynamic get optionSelectedFormatter => _optionSelectedFormatter;
-  set optionSelectedFormatter(dynamic _value) {
-    _optionSelectedFormatter = _value;
+  void insertAtIndexInFriendProfile(int _index, dynamic _value) {
+    _friendProfile.insert(_index, _value);
   }
 
-  String _showPopup = '';
-  String get showPopup => _showPopup;
-  set showPopup(String _value) {
-    _showPopup = _value;
+  dynamic _resAboutProfile;
+  dynamic get resAboutProfile => _resAboutProfile;
+  set resAboutProfile(dynamic _value) {
+    _resAboutProfile = _value;
   }
 
-  String _settingDomain = 'https://setting-ff.dev-tn.com';
-  String get settingDomain => _settingDomain;
-  set settingDomain(String _value) {
-    _settingDomain = _value;
+  String _emoji = '';
+  String get emoji => _emoji;
+  set emoji(String _value) {
+    _emoji = _value;
   }
 
-  dynamic _responseSettingGobal;
-  dynamic get responseSettingGobal => _responseSettingGobal;
-  set responseSettingGobal(dynamic _value) {
-    _responseSettingGobal = _value;
+  String _contentPost = '';
+  String get contentPost => _contentPost;
+  set contentPost(String _value) {
+    _contentPost = _value;
   }
 
-  int _time = 5;
-  int get time => _time;
-  set time(int _value) {
-    _time = _value;
+  dynamic _resNoti;
+  dynamic get resNoti => _resNoti;
+  set resNoti(dynamic _value) {
+    _resNoti = _value;
+  }
+
+  List<dynamic> _resRequestFriend = [];
+  List<dynamic> get resRequestFriend => _resRequestFriend;
+  set resRequestFriend(List<dynamic> _value) {
+    _resRequestFriend = _value;
+  }
+
+  void addToResRequestFriend(dynamic _value) {
+    _resRequestFriend.add(_value);
+  }
+
+  void removeFromResRequestFriend(dynamic _value) {
+    _resRequestFriend.remove(_value);
+  }
+
+  void removeAtIndexFromResRequestFriend(int _index) {
+    _resRequestFriend.removeAt(_index);
+  }
+
+  void updateResRequestFriendAtIndex(
+    int _index,
+    dynamic Function(dynamic) updateFn,
+  ) {
+    _resRequestFriend[_index] = updateFn(_resRequestFriend[_index]);
+  }
+
+  void insertAtIndexInResRequestFriend(int _index, dynamic _value) {
+    _resRequestFriend.insert(_index, _value);
+  }
+
+  List<dynamic> _listFriendUserOnline = [];
+  List<dynamic> get listFriendUserOnline => _listFriendUserOnline;
+  set listFriendUserOnline(List<dynamic> _value) {
+    _listFriendUserOnline = _value;
+  }
+
+  void addToListFriendUserOnline(dynamic _value) {
+    _listFriendUserOnline.add(_value);
+  }
+
+  void removeFromListFriendUserOnline(dynamic _value) {
+    _listFriendUserOnline.remove(_value);
+  }
+
+  void removeAtIndexFromListFriendUserOnline(int _index) {
+    _listFriendUserOnline.removeAt(_index);
+  }
+
+  void updateListFriendUserOnlineAtIndex(
+    int _index,
+    dynamic Function(dynamic) updateFn,
+  ) {
+    _listFriendUserOnline[_index] = updateFn(_listFriendUserOnline[_index]);
+  }
+
+  void insertAtIndexInListFriendUserOnline(int _index, dynamic _value) {
+    _listFriendUserOnline.insert(_index, _value);
+  }
+
+  String _contentComment = '';
+  String get contentComment => _contentComment;
+  set contentComment(String _value) {
+    _contentComment = _value;
   }
 }
 

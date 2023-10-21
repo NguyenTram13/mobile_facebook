@@ -1,4 +1,3 @@
 export 'graphql_project.dart' show graphqlProject;
-export 'get_app_settings.dart' show getAppSettings;
-export 'update_user_settings.dart' show updateUserSettings;
-export 'get_user_settings.dart' show getUserSettings;
+export 'save_data_to_local_storage.dart' show saveDataToLocalStorage;
+export 'clear_data_local_storage.dart' show clearDataLocalStorage;

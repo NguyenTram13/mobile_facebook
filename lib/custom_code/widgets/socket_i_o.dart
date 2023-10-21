@@ -51,11 +51,7 @@ class _SocketIOState extends State<SocketIO> {
         print("setting-style-uddate");
         var jsonData = json.decode(data);
         print(jsonData['data']);
-        setState(() {
-          FFAppState().update(() {
-            FFAppState().showPopup = 'show';
-          });
-        });
+        setState(() {});
       });
     });
     print('end socket');

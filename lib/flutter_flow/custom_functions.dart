@@ -237,3 +237,114 @@ double setHeight(
 ) {
   return index * step;
 }
+
+int getLengthArray(List<dynamic> data) {
+  return data.length;
+}
+
+dynamic getItemArray(
+  List<dynamic> data,
+  String keySearch,
+) {
+  dynamic result;
+  for (int i = 0; i < data.length; i++) {
+    if (data[i]["option_data"]["key"] == keySearch) {
+      result = data[i];
+      break;
+    }
+  }
+
+  return result;
+}
+
+bool checkLike(
+  List<dynamic> data,
+  int userId,
+) {
+  bool result = false;
+
+  for (int i = 0; i < data.length; i++) {
+    if (data[i]["user_id"] == userId) {
+      result = true;
+      break;
+    }
+  }
+
+  return result;
+}
+
+String getTimeAgo(String time) {
+  final now = DateTime.now();
+  final difference = now.difference(DateTime.parse(time));
+
+  if (difference.inSeconds < 60) {
+    return '${difference.inSeconds} seconds ago';
+  } else if (difference.inMinutes < 60) {
+    return '${difference.inMinutes} minutes ago';
+  } else if (difference.inHours < 24) {
+    return '${difference.inHours} hours ago';
+  } else if (difference.inDays < 7) {
+    return '${difference.inDays} days ago';
+  } else {
+    final weeks = difference.inDays ~/ 7;
+    if (weeks == 1) {
+      return '1 week ago';
+    } else {
+      return '$weeks weeks ago';
+    }
+  }
+}
+
+bool checkFriendOfUser(
+  List<dynamic> data,
+  int userIdProfile,
+) {
+  bool result = false;
+
+  for (int i = 0; i < data.length; i++) {
+    if (data[i]["friend_user"]['id'] == userIdProfile) {
+      result = true;
+      break;
+    }
+  }
+
+  return result;
+}
+
+bool checkUserRequestFriend(
+  List<dynamic> data,
+  int idUser,
+) {
+  bool result = false;
+
+  for (int i = 0; i < data.length; i++) {
+    if (data[i]["sender_data"]["id"] == idUser) {
+      result = true;
+    }
+  }
+
+  return result;
+}
+
+dynamic getoneDataRequestFriend(
+  List<dynamic> data,
+  int idUser,
+) {
+  dynamic result = null;
+  for (int i = 0; i < data.length; i++) {
+    if (data[i]["sender_data"]["id"] == idUser) {
+      result = data[i];
+      break;
+    }
+  }
+
+  return result;
+}
+
+List<dynamic> updateDataComment(
+  List<dynamic> dataOld,
+  dynamic comment,
+) {
+  dataOld.add(comment);
+  return dataOld;
+}
