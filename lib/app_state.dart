@@ -213,6 +213,12 @@ class FFAppState extends ChangeNotifier {
   set contentComment(String _value) {
     _contentComment = _value;
   }
+
+  String _qrCode = '';
+  String get qrCode => _qrCode;
+  set qrCode(String _value) {
+    _qrCode = _value;
+  }
 }
 
 LatLng? _latLngFromString(String? val) {

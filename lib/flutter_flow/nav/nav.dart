@@ -67,6 +67,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Login',
           path: '/login',
           builder: (context, params) => LoginWidget(),
+        ),
+        FFRoute(
+          name: 'qr_code',
+          path: '/qrCode',
+          builder: (context, params) => QrCodeWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

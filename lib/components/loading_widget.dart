@@ -53,8 +53,8 @@ class _LoadingWidgetState extends State<LoadingWidget> {
                 decoration: BoxDecoration(),
                 child: Lottie.asset(
                   'assets/lottie_animations/Loading_Animation.json',
-                  width: 150.0,
-                  height: 130.0,
+                  width: 60.0,
+                  height: 60.0,
                   fit: BoxFit.cover,
                   animate: true,
                 ),

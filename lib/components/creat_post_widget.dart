@@ -1,11 +1,13 @@
 import '/backend/api_requests/api_calls.dart';
 import '/components/add_image_post_widget.dart';
+import '/components/loading_widget.dart';
 import '/components/more_post_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -114,39 +116,6 @@ class _CreatPostWidgetState extends State<CreatPostWidget> {
                                   FFAppState().contentPost == ''
                               ? null
                               : () async {
-                                  if (_model.uploadedLocalFiles.length
-                                              .toString() !=
-                                          null &&
-                                      _model.uploadedLocalFiles.length
-                                              .toString() !=
-                                          '') {
-                                    _model.images =
-                                        await SocialGroup.uploadImagesCall.call(
-                                      imagesList: _model.uploadedLocalFiles,
-                                    );
-                                    if ((_model.images?.succeeded ?? true)) {
-                                      setState(() {
-                                        _model.listImage =
-                                            (_model.images?.jsonBody ?? '');
-                                      });
-                                    } else {
-                                      await showDialog(
-                                        context: context,
-                                        builder: (alertDialogContext) {
-                                          return AlertDialog(
-                                            title: Text('Upload file faild'),
-                                            actions: [
-                                              TextButton(
-                                                onPressed: () => Navigator.pop(
-                                                    alertDialogContext),
-                                                child: Text('Ok'),
-                                              ),
-                                            ],
-                                          );
-                                        },
-                                      );
-                                    }
-                                  }
                                   _model.apiResultxha =
                                       await SocialGroup.createPostCall.call(
                                     content: FFAppState().contentPost,
@@ -228,6 +197,8 @@ class _CreatPostWidgetState extends State<CreatPostWidget> {
                               width: 1.0,
                             ),
                             borderRadius: BorderRadius.circular(8.0),
+                            disabledColor:
+                                FlutterFlowTheme.of(context).secondaryText,
                           ),
                         ),
                       ),
@@ -541,6 +512,124 @@ class _CreatPostWidgetState extends State<CreatPostWidget> {
                             ),
                           ],
                         ),
+                        Flexible(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              if (_model.loadingUploadImage == false)
+                                Container(
+                                  width: double.infinity,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                  ),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      if ((_model.listImage != null) &&
+                                          (_model.listImageShow.length == 1))
+                                        Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Flexible(
+                                              child: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                                child: Image.network(
+                                                  getJsonField(
+                                                    _model.listImage,
+                                                    r'''$.arrImgs[0]''',
+                                                  ),
+                                                  width:
+                                                      MediaQuery.sizeOf(context)
+                                                              .width *
+                                                          1.0,
+                                                  fit: BoxFit.cover,
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      if ((_model.listImage != null) &&
+                                          (_model.listImageShow.length > 1))
+                                        Container(
+                                          width: double.infinity,
+                                          height: 400.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                          ),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    8.0, 8.0, 8.0, 8.0),
+                                            child: Builder(
+                                              builder: (context) {
+                                                final image = _model
+                                                    .listImageShow
+                                                    .toList();
+                                                return GridView.builder(
+                                                  padding: EdgeInsets.zero,
+                                                  gridDelegate:
+                                                      SliverGridDelegateWithFixedCrossAxisCount(
+                                                    crossAxisCount: 2,
+                                                    crossAxisSpacing: 10.0,
+                                                    mainAxisSpacing: 10.0,
+                                                    childAspectRatio: 1.0,
+                                                  ),
+                                                  scrollDirection:
+                                                      Axis.vertical,
+                                                  itemCount: image.length,
+                                                  itemBuilder:
+                                                      (context, imageIndex) {
+                                                    final imageItem =
+                                                        image[imageIndex];
+                                                    return Container(
+                                                      width: 100.0,
+                                                      height: 100.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                      ),
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                        child: Image.network(
+                                                          '${imageItem}',
+                                                          width: 300.0,
+                                                          height: 200.0,
+                                                          fit: BoxFit.cover,
+                                                        ),
+                                                      ),
+                                                    );
+                                                  },
+                                                );
+                                              },
+                                            ),
+                                          ),
+                                        ),
+                                    ],
+                                  ),
+                                ),
+                              if (_model.loadingUploadImage == true)
+                                Container(
+                                  width: 100.0,
+                                  height: 100.0,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                  ),
+                                  child: wrapWithModel(
+                                    model: _model.loadingModel,
+                                    updateCallback: () => setState(() {}),
+                                    child: LoadingWidget(),
+                                  ),
+                                ),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -609,6 +698,56 @@ class _CreatPostWidgetState extends State<CreatPostWidget> {
                                   return;
                                 }
                               }
+
+                              setState(() {
+                                _model.loadingUploadImage = true;
+                              });
+                              _model.apiResultzqb =
+                                  await SocialGroup.uploadImagesCall.call(
+                                imagesList: _model.uploadedLocalFiles,
+                              );
+                              if ((_model.apiResultzqb?.succeeded ?? true)) {
+                                setState(() {
+                                  _model.listImage =
+                                      (_model.apiResultzqb?.jsonBody ?? '');
+                                });
+                                if (_model.listImageShow.length > 0) {
+                                  setState(() {
+                                    _model.listImageShow = functions
+                                        .combieList(
+                                            _model.listImageShow.toList(),
+                                            (getJsonField(
+                                              (_model.apiResultzqb?.jsonBody ??
+                                                  ''),
+                                              r'''$.arrImgs''',
+                                              true,
+                                            ) as List)
+                                                .map<String>(
+                                                    (s) => s.toString())
+                                                .toList()!)
+                                        .toList()
+                                        .cast<String>();
+                                  });
+                                } else {
+                                  setState(() {
+                                    _model.listImageShow = (getJsonField(
+                                      (_model.apiResultzqb?.jsonBody ?? ''),
+                                      r'''$.arrImgs''',
+                                      true,
+                                    ) as List)
+                                        .map<String>((s) => s.toString())
+                                        .toList()!
+                                        .toList()
+                                        .cast<String>();
+                                  });
+                                }
+
+                                setState(() {
+                                  _model.loadingUploadImage = false;
+                                });
+                              }
+
+                              setState(() {});
                             },
                             child: Icon(
                               Icons.filter_sharp,

@@ -348,3 +348,11 @@ List<dynamic> updateDataComment(
   dataOld.add(comment);
   return dataOld;
 }
+
+List<String> combieList(
+  List<String> dataOne,
+  List<String> dataTwo,
+) {
+  var newList = [...dataOne, ...dataTwo];
+  return newList;
+}

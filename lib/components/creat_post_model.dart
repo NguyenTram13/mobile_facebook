@@ -1,11 +1,13 @@
 import '/backend/api_requests/api_calls.dart';
 import '/components/add_image_post_widget.dart';
+import '/components/loading_widget.dart';
 import '/components/more_post_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'creat_post_widget.dart' show CreatPostWidget;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -23,10 +25,20 @@ class CreatPostModel extends FlutterFlowModel<CreatPostWidget> {
 
   dynamic listImage;
 
+  bool loadingUploadImage = false;
+
+  List<String> listImageShow = [];
+  void addToListImageShow(String item) => listImageShow.add(item);
+  void removeFromListImageShow(String item) => listImageShow.remove(item);
+  void removeAtIndexFromListImageShow(int index) =>
+      listImageShow.removeAt(index);
+  void insertAtIndexInListImageShow(int index, String item) =>
+      listImageShow.insert(index, item);
+  void updateListImageShowAtIndex(int index, Function(String) updateFn) =>
+      listImageShow[index] = updateFn(listImageShow[index]);
+
   ///  State fields for stateful widgets in this component.
 
-  // Stores action output result for [Backend Call - API (Upload images)] action in Button widget.
-  ApiCallResponse? images;
   // Stores action output result for [Backend Call - API (Create Post)] action in Button widget.
   ApiCallResponse? apiResultxha;
   // Stores action output result for [Backend Call - API (Get Post Home)] action in Button widget.
@@ -35,16 +47,25 @@ class CreatPostModel extends FlutterFlowModel<CreatPostWidget> {
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
+  // Model for loading component.
+  late LoadingModel loadingModel;
   bool isDataUploading = false;
   List<FFUploadedFile> uploadedLocalFiles = [];
 
+  // Stores action output result for [Backend Call - API (Upload images)] action in Icon widget.
+  ApiCallResponse? apiResultzqb;
+
   /// Initialization and disposal methods.
 
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    loadingModel = createModel(context, () => LoadingModel());
+  }
 
   void dispose() {
     textFieldFocusNode?.dispose();
     textController?.dispose();
+
+    loadingModel.dispose();
   }
 
   /// Action blocks are added here.

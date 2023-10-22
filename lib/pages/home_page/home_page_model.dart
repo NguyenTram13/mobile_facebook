@@ -70,6 +70,8 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
   late ComponentAvatarModel componentAvatarModel3;
   // Model for fullnameUser component.
   late FullnameUserModel fullnameUserModel;
+  // Stores action output result for [Backend Call - API (Generating QR Code)] action in Button widget.
+  ApiCallResponse? apiResult2vb;
   // Model for loading component.
   late LoadingModel loadingModel;
 

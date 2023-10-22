@@ -59,6 +59,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
       if ((_model.apiResulttaz?.succeeded ?? true)) {
         setState(() {
           FFAppState().resProfile = (_model.apiResulttaz?.jsonBody ?? '');
+          FFAppState().qrCode = getJsonField(
+            (_model.apiResulttaz?.jsonBody ?? ''),
+            r'''$.qr_code''',
+          ).toString().toString();
         });
       } else {
         await actions.clearDataLocalStorage(
@@ -232,7 +236,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 8.0, 8.0, 8.0),
                                             child: Icon(
-                                              Icons.add,
+                                              Icons.qr_code_2_outlined,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
@@ -2828,144 +2832,147 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                           MainAxisAlignment
                                                                               .spaceEvenly,
                                                                       children: [
-                                                                        Container(
-                                                                          width:
-                                                                              MediaQuery.sizeOf(context).width * 0.4,
-                                                                          decoration:
-                                                                              BoxDecoration(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primaryBtnText,
-                                                                            boxShadow: [
-                                                                              BoxShadow(
-                                                                                blurRadius: 4.0,
-                                                                                color: Color(0x33000000),
-                                                                                offset: Offset(0.0, 2.0),
-                                                                              )
-                                                                            ],
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(10.0),
-                                                                          ),
+                                                                        Flexible(
                                                                           child:
-                                                                              Column(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            crossAxisAlignment:
-                                                                                CrossAxisAlignment.start,
-                                                                            children:
-                                                                                [
-                                                                              Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
-                                                                                child: Container(
-                                                                                  decoration: BoxDecoration(
-                                                                                    color: Color(0x00FFFFFF),
-                                                                                  ),
-                                                                                  child: Column(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                    children: [
-                                                                                      Container(
+                                                                              Container(
+                                                                            width:
+                                                                                MediaQuery.sizeOf(context).width * 1.0,
+                                                                            height:
+                                                                                300.0,
+                                                                            decoration:
+                                                                                BoxDecoration(
+                                                                              color: FlutterFlowTheme.of(context).primaryBtnText,
+                                                                              boxShadow: [
+                                                                                BoxShadow(
+                                                                                  blurRadius: 4.0,
+                                                                                  color: Color(0x33000000),
+                                                                                  offset: Offset(0.0, 2.0),
+                                                                                )
+                                                                              ],
+                                                                              borderRadius: BorderRadius.circular(10.0),
+                                                                            ),
+                                                                            child:
+                                                                                Align(
+                                                                              alignment: AlignmentDirectional(0.00, 0.00),
+                                                                              child: Column(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                children: [
+                                                                                  Expanded(
+                                                                                    child: Padding(
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
+                                                                                      child: Container(
                                                                                         decoration: BoxDecoration(
                                                                                           color: Color(0x00FFFFFF),
                                                                                         ),
-                                                                                        child: ClipRRect(
-                                                                                          borderRadius: BorderRadius.circular(0.0),
-                                                                                          child: Image.network(
-                                                                                            'https://picsum.photos/seed/240/600',
-                                                                                            width: 40.0,
-                                                                                            height: 40.0,
-                                                                                            fit: BoxFit.cover,
-                                                                                          ),
-                                                                                        ),
-                                                                                      ),
-                                                                                      Container(
-                                                                                        decoration: BoxDecoration(
-                                                                                          color: Color(0x00FFFFFF),
-                                                                                        ),
-                                                                                        child: Text(
-                                                                                          'Feeds',
-                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                fontSize: 16.0,
-                                                                                                fontWeight: FontWeight.bold,
-                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                        child: Column(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                          children: [
+                                                                                            Expanded(
+                                                                                              child: Container(
+                                                                                                decoration: BoxDecoration(
+                                                                                                  color: Color(0x00FFFFFF),
+                                                                                                ),
+                                                                                                child: ClipRRect(
+                                                                                                  borderRadius: BorderRadius.circular(0.0),
+                                                                                                  child: Image.network(
+                                                                                                    FFAppState().qrCode != null && FFAppState().qrCode != '' ? '${FFAppState().qrCode}' : FFAppState().backgroundDefault,
+                                                                                                    width: MediaQuery.sizeOf(context).width * 1.0,
+                                                                                                    height: 250.0,
+                                                                                                    fit: BoxFit.cover,
+                                                                                                  ),
+                                                                                                ),
                                                                                               ),
-                                                                                        ),
-                                                                                      ),
-                                                                                    ].divide(SizedBox(height: 8.0)),
-                                                                                  ),
-                                                                                ),
-                                                                              ),
-                                                                            ].divide(SizedBox(height: 8.0)),
-                                                                          ),
-                                                                        ),
-                                                                        Container(
-                                                                          width:
-                                                                              MediaQuery.sizeOf(context).width * 0.4,
-                                                                          decoration:
-                                                                              BoxDecoration(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primaryBtnText,
-                                                                            boxShadow: [
-                                                                              BoxShadow(
-                                                                                blurRadius: 4.0,
-                                                                                color: Color(0x33000000),
-                                                                                offset: Offset(0.0, 2.0),
-                                                                              )
-                                                                            ],
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(10.0),
-                                                                          ),
-                                                                          child:
-                                                                              Column(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            crossAxisAlignment:
-                                                                                CrossAxisAlignment.start,
-                                                                            children:
-                                                                                [
-                                                                              Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
-                                                                                child: Container(
-                                                                                  decoration: BoxDecoration(
-                                                                                    color: Color(0x00FFFFFF),
-                                                                                  ),
-                                                                                  child: Column(
-                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                    children: [
-                                                                                      Container(
-                                                                                        decoration: BoxDecoration(
-                                                                                          color: Color(0x00FFFFFF),
-                                                                                        ),
-                                                                                        child: ClipRRect(
-                                                                                          borderRadius: BorderRadius.circular(0.0),
-                                                                                          child: Image.network(
-                                                                                            'https://picsum.photos/seed/240/600',
-                                                                                            width: 40.0,
-                                                                                            height: 40.0,
-                                                                                            fit: BoxFit.cover,
-                                                                                          ),
-                                                                                        ),
-                                                                                      ),
-                                                                                      Container(
-                                                                                        decoration: BoxDecoration(
-                                                                                          color: Color(0x00FFFFFF),
-                                                                                        ),
-                                                                                        child: Text(
-                                                                                          'Friends',
-                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                fontSize: 16.0,
-                                                                                                fontWeight: FontWeight.bold,
-                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                            ),
+                                                                                            Container(
+                                                                                              width: MediaQuery.sizeOf(context).width * 1.0,
+                                                                                              decoration: BoxDecoration(
+                                                                                                color: Color(0x00FFFFFF),
                                                                                               ),
+                                                                                              child: Row(
+                                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                                children: [
+                                                                                                  Expanded(
+                                                                                                    child: FFButtonWidget(
+                                                                                                      onPressed: getJsonField(
+                                                                                                                FFAppState().resProfile,
+                                                                                                                r'''$.qr_code''',
+                                                                                                              ) ==
+                                                                                                              null
+                                                                                                          ? null
+                                                                                                          : () {
+                                                                                                              print('Button pressed ...');
+                                                                                                            },
+                                                                                                      text: 'Download',
+                                                                                                      options: FFButtonOptions(
+                                                                                                        height: 40.0,
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                        color: FlutterFlowTheme.of(context).tertiary,
+                                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                                              color: Colors.white,
+                                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                                                            ),
+                                                                                                        elevation: 3.0,
+                                                                                                        borderSide: BorderSide(
+                                                                                                          color: Colors.transparent,
+                                                                                                          width: 1.0,
+                                                                                                        ),
+                                                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                                                        disabledColor: FlutterFlowTheme.of(context).secondaryText,
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                  Expanded(
+                                                                                                    child: FFButtonWidget(
+                                                                                                      onPressed: () async {
+                                                                                                        _model.apiResult2vb = await SocialGroup.generatingQRCodeCall.call(
+                                                                                                          accessToken: FFAppState().accessToken,
+                                                                                                        );
+                                                                                                        if ((_model.apiResult2vb?.succeeded ?? true)) {
+                                                                                                          setState(() {
+                                                                                                            FFAppState().qrCode = getJsonField(
+                                                                                                              (_model.apiResult2vb?.jsonBody ?? ''),
+                                                                                                              r'''$.image_code''',
+                                                                                                            ).toString();
+                                                                                                          });
+                                                                                                        }
+
+                                                                                                        setState(() {});
+                                                                                                      },
+                                                                                                      text: 'Generate',
+                                                                                                      options: FFButtonOptions(
+                                                                                                        height: 40.0,
+                                                                                                        padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                        color: Color(0x00167EFB),
+                                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                              fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                                              color: FlutterFlowTheme.of(context).tertiary,
+                                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                                                            ),
+                                                                                                        borderSide: BorderSide(
+                                                                                                          color: FlutterFlowTheme.of(context).tertiary,
+                                                                                                          width: 1.0,
+                                                                                                        ),
+                                                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                                                      ),
+                                                                                                    ),
+                                                                                                  ),
+                                                                                                ].divide(SizedBox(width: 16.0)),
+                                                                                              ),
+                                                                                            ),
+                                                                                          ].divide(SizedBox(height: 8.0)),
                                                                                         ),
                                                                                       ),
-                                                                                    ].divide(SizedBox(height: 8.0)),
+                                                                                    ),
                                                                                   ),
-                                                                                ),
+                                                                                ].divide(SizedBox(height: 8.0)),
                                                                               ),
-                                                                            ].divide(SizedBox(height: 8.0)),
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ],

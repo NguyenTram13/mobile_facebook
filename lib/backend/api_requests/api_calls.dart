@@ -29,6 +29,8 @@ class SocialGroup {
   static RefuseFriendCall refuseFriendCall = RefuseFriendCall();
   static AcceptFriendCall acceptFriendCall = AcceptFriendCall();
   static AddFriendCall addFriendCall = AddFriendCall();
+  static GeneratingQRCodeCall generatingQRCodeCall = GeneratingQRCodeCall();
+  static ReadAndAddFriendCall readAndAddFriendCall = ReadAndAddFriendCall();
 }
 
 class LoginCall {
@@ -419,6 +421,50 @@ class AddFriendCall {
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+}
+
+class GeneratingQRCodeCall {
+  Future<ApiCallResponse> call({
+    String? accessToken = '',
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'Generating QR Code',
+      apiUrl: '${SocialGroup.baseUrl}/admin/user/renderQR',
+      callType: ApiCallType.GET,
+      headers: {
+        'Authorization': 'Bearer ${accessToken}',
+      },
+      params: {},
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+}
+
+class ReadAndAddFriendCall {
+  Future<ApiCallResponse> call({
+    String? accessToken = '',
+    FFUploadedFile? qrCode,
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'Read and Add Friend',
+      apiUrl: '${SocialGroup.baseUrl}/admin/user/readQRAndAddFriend',
+      callType: ApiCallType.POST,
+      headers: {
+        'Authorization': 'Bearer ${accessToken}',
+      },
+      params: {
+        'qr_code': qrCode,
+      },
+      bodyType: BodyType.MULTIPART,
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
