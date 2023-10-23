@@ -221,26 +221,46 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .dateLabelBg,
-                                          borderRadius:
-                                              BorderRadius.circular(100.0),
-                                        ),
-                                        child: Align(
-                                          alignment:
-                                              AlignmentDirectional(0.00, 0.00),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    8.0, 8.0, 8.0, 8.0),
-                                            child: Icon(
-                                              Icons.qr_code_2_outlined,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              size: 30.0,
+                                      InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          context.pushNamed(
+                                            'qr_code',
+                                            extra: <String, dynamic>{
+                                              kTransitionInfoKey:
+                                                  TransitionInfo(
+                                                hasTransition: true,
+                                                transitionType:
+                                                    PageTransitionType.fade,
+                                                duration:
+                                                    Duration(milliseconds: 0),
+                                              ),
+                                            },
+                                          );
+                                        },
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .dateLabelBg,
+                                            borderRadius:
+                                                BorderRadius.circular(100.0),
+                                          ),
+                                          child: Align(
+                                            alignment: AlignmentDirectional(
+                                                0.00, 0.00),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(8.0, 8.0, 8.0, 8.0),
+                                              child: Icon(
+                                                Icons.qr_code_2_outlined,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                size: 30.0,
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -2902,8 +2922,10 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                                                               ) ==
                                                                                                               null
                                                                                                           ? null
-                                                                                                          : () {
-                                                                                                              print('Button pressed ...');
+                                                                                                          : () async {
+                                                                                                              await actions.dowmloadImage(
+                                                                                                                FFAppState().qrCode,
+                                                                                                              );
                                                                                                             },
                                                                                                       text: 'Download',
                                                                                                       options: FFButtonOptions(
