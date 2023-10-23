@@ -46,79 +46,81 @@ class _ListPostWidgetState extends State<ListPostWidget> {
   Widget build(BuildContext context) {
     context.watch<FFAppState>();
 
-    return Column(
-      mainAxisSize: MainAxisSize.max,
-      children: [
-        if (widget.data!.length > 0)
-          Container(
-            width: MediaQuery.sizeOf(context).width * 1.0,
-            decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).accent2,
-            ),
-            child: Visibility(
-              visible: widget.data!.length > 0,
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
-                child: Builder(
-                  builder: (context) {
-                    final post = widget.data?.toList() ?? [];
-                    return Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: List.generate(post.length, (postIndex) {
-                        final postItem = post[postIndex];
-                        return wrapWithModel(
-                          model: _model.postModels.getModel(
-                            getJsonField(
-                              postItem,
-                              r'''$.id''',
-                            ).toString(),
-                            postIndex,
-                          ),
-                          updateCallback: () => setState(() {}),
-                          child: PostWidget(
-                            key: Key(
-                              'Key8se_${getJsonField(
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          if (widget.data!.length > 0)
+            Container(
+              width: MediaQuery.sizeOf(context).width * 1.0,
+              decoration: BoxDecoration(
+                color: FlutterFlowTheme.of(context).accent2,
+              ),
+              child: Visibility(
+                visible: widget.data!.length > 0,
+                child: Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                  child: Builder(
+                    builder: (context) {
+                      final post = widget.data?.toList() ?? [];
+                      return Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: List.generate(post.length, (postIndex) {
+                          final postItem = post[postIndex];
+                          return wrapWithModel(
+                            model: _model.postModels.getModel(
+                              getJsonField(
                                 postItem,
                                 r'''$.id''',
-                              ).toString()}',
+                              ).toString(),
+                              postIndex,
                             ),
-                            data: postItem,
-                          ),
-                        );
-                      }).divide(SizedBox(height: 4.0)),
-                    );
-                  },
+                            updateCallback: () => setState(() {}),
+                            child: PostWidget(
+                              key: Key(
+                                'Key8se_${getJsonField(
+                                  postItem,
+                                  r'''$.id''',
+                                ).toString()}',
+                              ),
+                              data: postItem,
+                            ),
+                          );
+                        }).divide(SizedBox(height: 4.0)),
+                      );
+                    },
+                  ),
                 ),
               ),
             ),
-          ),
-        if (widget.data!.length < 1)
-          Container(
-            width: MediaQuery.sizeOf(context).width * 1.0,
-            decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).secondaryBackground,
-            ),
-            child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Text(
-                    'No Post',
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily:
-                              FlutterFlowTheme.of(context).bodyMediumFamily,
-                          color: FlutterFlowTheme.of(context).accent3,
-                          fontWeight: FontWeight.w600,
-                          useGoogleFonts: GoogleFonts.asMap().containsKey(
-                              FlutterFlowTheme.of(context).bodyMediumFamily),
-                        ),
-                  ),
-                ],
+          if (widget.data!.length < 1)
+            Container(
+              width: MediaQuery.sizeOf(context).width * 1.0,
+              decoration: BoxDecoration(
+                color: FlutterFlowTheme.of(context).secondaryBackground,
+              ),
+              child: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Text(
+                      'No Post',
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily:
+                                FlutterFlowTheme.of(context).bodyMediumFamily,
+                            color: FlutterFlowTheme.of(context).accent3,
+                            fontWeight: FontWeight.w600,
+                            useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                FlutterFlowTheme.of(context).bodyMediumFamily),
+                          ),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-      ],
+        ],
+      ),
     );
   }
 }
