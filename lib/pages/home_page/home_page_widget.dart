@@ -1123,13 +1123,27 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                       ),
                                                     ),
                                                   ),
-                                                  wrapWithModel(
-                                                    model: _model.listPostModel,
-                                                    updateCallback: () =>
-                                                        setState(() {}),
-                                                    child: ListPostWidget(
-                                                      data: FFAppState()
-                                                          .resPostHome,
+                                                  Flexible(
+                                                    child: Container(
+                                                      width: MediaQuery.sizeOf(
+                                                                  context)
+                                                              .width *
+                                                          1.0,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                      ),
+                                                      child: wrapWithModel(
+                                                        model: _model
+                                                            .listPostModel,
+                                                        updateCallback: () =>
+                                                            setState(() {}),
+                                                        child: ListPostWidget(
+                                                          data: FFAppState()
+                                                              .resPostHome,
+                                                        ),
+                                                      ),
                                                     ),
                                                   ),
                                                 ].divide(

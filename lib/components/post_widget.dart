@@ -218,30 +218,95 @@ class _PostWidgetState extends State<PostWidget> {
               ),
             ),
           ),
-          Container(
-            width: MediaQuery.sizeOf(context).width * 1.0,
-            decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).secondaryBackground,
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(8.0),
-              child: Image.network(
-                getJsonField(
+          if (functions
+                  .getLengthArray(getJsonField(
+                    widget.data,
+                    r'''$.file_data''',
+                    true,
+                  )!)
+                  .toString() ==
+              '1')
+            Container(
+              width: MediaQuery.sizeOf(context).width * 1.0,
+              decoration: BoxDecoration(
+                color: FlutterFlowTheme.of(context).secondaryBackground,
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8.0),
+                child: Image.network(
+                  getJsonField(
+                            widget.data,
+                            r'''$.file_data[0]''',
+                          ) !=
+                          null
+                      ? getJsonField(
                           widget.data,
-                          r'''$.file_data[0]''',
-                        ) !=
-                        null
-                    ? getJsonField(
-                        widget.data,
-                        r'''$.file_data[0].link''',
-                      )
-                    : ' ',
-                width: 300.0,
-                height: 200.0,
-                fit: BoxFit.cover,
+                          r'''$.file_data[0].link''',
+                        )
+                      : ' ',
+                  width: 300.0,
+                  height: 200.0,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
-          ),
+          if (functions
+                  .getLengthArray(getJsonField(
+                    widget.data,
+                    r'''$.file_data''',
+                    true,
+                  )!)
+                  .toString() !=
+              '1')
+            Container(
+              width: MediaQuery.sizeOf(context).width * 1.0,
+              decoration: BoxDecoration(
+                color: FlutterFlowTheme.of(context).secondaryBackground,
+              ),
+              child: Builder(
+                builder: (context) {
+                  final image = getJsonField(
+                    widget.data,
+                    r'''$.file_data''',
+                  ).toList();
+                  return GridView.builder(
+                    padding: EdgeInsets.zero,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 10.0,
+                      mainAxisSpacing: 10.0,
+                      childAspectRatio: 1.0,
+                    ),
+                    shrinkWrap: true,
+                    scrollDirection: Axis.vertical,
+                    itemCount: image.length,
+                    itemBuilder: (context, imageIndex) {
+                      final imageItem = image[imageIndex];
+                      return Container(
+                        width: 100.0,
+                        height: 100.0,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8.0),
+                          child: Image.network(
+                            getJsonField(
+                              imageItem,
+                              r'''$.link''',
+                            ),
+                            width: 300.0,
+                            height: 200.0,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                },
+              ),
+            ),
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(12.0, 8.0, 12.0, 8.0),
             child: Container(
