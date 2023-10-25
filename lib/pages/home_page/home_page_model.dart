@@ -41,11 +41,6 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
   ApiCallResponse? resRequestFriend;
   // Stores action output result for [Backend Call - API (Get Friend)] action in HomePage widget.
   ApiCallResponse? listFriend;
-  // State field(s) for TabBar widget.
-  TabController? tabBarController;
-  int get tabBarCurrentIndex =>
-      tabBarController != null ? tabBarController!.index : 0;
-
   // Model for componentAvatar component.
   late ComponentAvatarModel componentAvatarModel1;
   // Model for input_create_post component.
@@ -90,7 +85,6 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
 
   void dispose() {
     unfocusNode.dispose();
-    tabBarController?.dispose();
     componentAvatarModel1.dispose();
     inputCreatePostModel.dispose();
     listPostModel.dispose();
