@@ -79,6 +79,8 @@ class _CommentWidgetState extends State<CommentWidget> {
       children: [
         Container(
           width: MediaQuery.sizeOf(context).width * 1.0,
+          height: MediaQuery.sizeOf(context).height * 0.8,
+
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
           ),

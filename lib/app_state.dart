@@ -219,6 +219,12 @@ class FFAppState extends ChangeNotifier {
   set qrCode(String _value) {
     _qrCode = _value;
   }
+
+  String _pageHomeSelect = 'home';
+  String get pageHomeSelect => _pageHomeSelect;
+  set pageHomeSelect(String _value) {
+    _pageHomeSelect = _value;
+  }
 }
 
 LatLng? _latLngFromString(String? val) {
