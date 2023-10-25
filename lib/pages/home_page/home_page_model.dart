@@ -41,6 +41,16 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
   ApiCallResponse? resRequestFriend;
   // Stores action output result for [Backend Call - API (Get Friend)] action in HomePage widget.
   ApiCallResponse? listFriend;
+  // Stores action output result for [Backend Call - API (Get Post Home)] action in Column widget.
+  ApiCallResponse? apiResult8v7Copy;
+  // Stores action output result for [Backend Call - API (Get Profile)] action in Column widget.
+  ApiCallResponse? apiResulttazCopy;
+  // Stores action output result for [Backend Call - API (Get Noti)] action in Column widget.
+  ApiCallResponse? resNotiCopy;
+  // Stores action output result for [Backend Call - API (Get Request Friend)] action in Column widget.
+  ApiCallResponse? resRequestFriendCopy;
+  // Stores action output result for [Backend Call - API (Get Friend)] action in Column widget.
+  ApiCallResponse? listFriendCopy;
   // Model for componentAvatar component.
   late ComponentAvatarModel componentAvatarModel1;
   // Model for input_create_post component.
