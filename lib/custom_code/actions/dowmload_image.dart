@@ -7,24 +7,24 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-import 'package:image_downloader/image_downloader.dart';
+// import 'package:image_downloader/image_downloader.dart';
 // Set your action name, define your arguments and return parameter,
 // and then add the boilerplate code using the green button on the right!
 
 Future<dynamic> dowmloadImage(String linkImage) async {
-  try {
+  // try {
     // Saved with this method.
-    var imageId = await ImageDownloader.downloadImage(linkImage);
-    if (imageId == null) {
-      return;
-    }
+  //   var imageId = await ImageDownloader.downloadImage(linkImage);
+  //   if (imageId == null) {
+  //     return;
+  //   }
 
-    // Below is a method of obtaining saved image information.
-    var fileName = await ImageDownloader.findName(imageId);
-    var path = await ImageDownloader.findPath(imageId);
-    var size = await ImageDownloader.findByteSize(imageId);
-    var mimeType = await ImageDownloader.findMimeType(imageId);
-  } catch (error) {
-    print(error);
-  }
+  //   // Below is a method of obtaining saved image information.
+  //   var fileName = await ImageDownloader.findName(imageId);
+  //   var path = await ImageDownloader.findPath(imageId);
+  //   var size = await ImageDownloader.findByteSize(imageId);
+  //   var mimeType = await ImageDownloader.findMimeType(imageId);
+  // } catch (error) {
+  //   print(error);
+  // }
 }
