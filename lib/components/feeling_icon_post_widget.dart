@@ -31,6 +31,7 @@ class _FeelingIconPostWidgetState extends State<FeelingIconPostWidget>
 
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
+
     _model.tabBarController = TabController(
       vsync: this,
       length: 2,

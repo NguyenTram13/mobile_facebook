@@ -6,6 +6,7 @@ import '/components/list_post_widget.dart';
 import '/components/loading_widget.dart';
 import '/components/search_all_widget.dart';
 import '/components/suggestions_friend_widget.dart';
+import '/components/view_story_widget.dart';
 import '/components/your_friends_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';

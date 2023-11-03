@@ -31,6 +31,7 @@ class SocialGroup {
   static AddFriendCall addFriendCall = AddFriendCall();
   static GeneratingQRCodeCall generatingQRCodeCall = GeneratingQRCodeCall();
   static ReadAndAddFriendCall readAndAddFriendCall = ReadAndAddFriendCall();
+  static UploadOneImageCall uploadOneImageCall = UploadOneImageCall();
 }
 
 class LoginCall {
@@ -463,6 +464,27 @@ class ReadAndAddFriendCall {
       },
       params: {
         'qr_code': qrCode,
+      },
+      bodyType: BodyType.MULTIPART,
+      returnBody: true,
+      encodeBodyUtf8: false,
+      decodeUtf8: false,
+      cache: false,
+    );
+  }
+}
+
+class UploadOneImageCall {
+  Future<ApiCallResponse> call({
+    FFUploadedFile? image,
+  }) async {
+    return ApiManager.instance.makeApiCall(
+      callName: 'Upload One Image',
+      apiUrl: '${SocialGroup.baseUrl}/post/upload_one_image',
+      callType: ApiCallType.POST,
+      headers: {},
+      params: {
+        'image': image,
       },
       bodyType: BodyType.MULTIPART,
       returnBody: true,
