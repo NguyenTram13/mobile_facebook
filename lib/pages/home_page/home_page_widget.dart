@@ -6,6 +6,7 @@ import '/components/list_post_widget.dart';
 import '/components/loading_widget.dart';
 import '/components/search_all_widget.dart';
 import '/components/suggestions_friend_widget.dart';
+import '/components/view_story_widget.dart';
 import '/components/your_friends_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -1165,334 +1166,384 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                 ],
                                                               ),
                                                             ),
-                                                            Container(
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryBackground,
-                                                              ),
-                                                              child: Stack(
-                                                                children: [
-                                                                  Container(
-                                                                    width:
-                                                                        120.0,
-                                                                    height:
-                                                                        160.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              12.0),
-                                                                      border:
-                                                                          Border
-                                                                              .all(
-                                                                        width:
-                                                                            1.0,
+                                                            InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                await showModalBottomSheet(
+                                                                  isScrollControlled:
+                                                                      true,
+                                                                  backgroundColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  enableDrag:
+                                                                      false,
+                                                                  context:
+                                                                      context,
+                                                                  builder:
+                                                                      (context) {
+                                                                    return GestureDetector(
+                                                                      onTap: () => _model
+                                                                              .unfocusNode
+                                                                              .canRequestFocus
+                                                                          ? FocusScope.of(context).requestFocus(_model
+                                                                              .unfocusNode)
+                                                                          : FocusScope.of(context)
+                                                                              .unfocus(),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding:
+                                                                            MediaQuery.viewInsetsOf(context),
+                                                                        child:
+                                                                            ViewStoryWidget(),
                                                                       ),
-                                                                    ),
-                                                                    child:
-                                                                        Stack(
-                                                                      children: [
-                                                                        Container(
-                                                                          width:
-                                                                              MediaQuery.sizeOf(context).width * 1.0,
-                                                                          height:
-                                                                              MediaQuery.sizeOf(context).height * 1.0,
-                                                                          decoration:
-                                                                              BoxDecoration(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).secondaryBackground,
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(12.0),
-                                                                          ),
-                                                                          child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(12.0),
-                                                                            child:
-                                                                                Image.network(
-                                                                              'https://picsum.photos/seed/234/600',
-                                                                              width: 300.0,
-                                                                              height: 200.0,
-                                                                              fit: BoxFit.cover,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                        Container(
-                                                                          width:
-                                                                              MediaQuery.sizeOf(context).width * 1.0,
-                                                                          height:
-                                                                              MediaQuery.sizeOf(context).height * 1.0,
-                                                                          decoration:
-                                                                              BoxDecoration(
-                                                                            color:
-                                                                                Color(0x8B121212),
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(10.0),
-                                                                          ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                  Align(
-                                                                    alignment:
-                                                                        AlignmentDirectional(
-                                                                            0.00,
-                                                                            1.00),
-                                                                    child:
-                                                                        Container(
+                                                                    );
+                                                                  },
+                                                                ).then((value) =>
+                                                                    safeSetState(
+                                                                        () {}));
+                                                              },
+                                                              child: Container(
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryBackground,
+                                                                ),
+                                                                child: Stack(
+                                                                  children: [
+                                                                    Container(
                                                                       width:
                                                                           120.0,
                                                                       height:
                                                                           160.0,
                                                                       decoration:
                                                                           BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryBackground,
                                                                         borderRadius:
                                                                             BorderRadius.circular(12.0),
+                                                                        border:
+                                                                            Border.all(
+                                                                          width:
+                                                                              1.0,
+                                                                        ),
                                                                       ),
                                                                       child:
-                                                                          Column(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.min,
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.spaceBetween,
-                                                                        crossAxisAlignment:
-                                                                            CrossAxisAlignment.start,
+                                                                          Stack(
                                                                         children: [
-                                                                          Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                4.0,
-                                                                                4.0,
-                                                                                4.0,
-                                                                                4.0),
+                                                                          Container(
+                                                                            width:
+                                                                                MediaQuery.sizeOf(context).width * 1.0,
+                                                                            height:
+                                                                                MediaQuery.sizeOf(context).height * 1.0,
+                                                                            decoration:
+                                                                                BoxDecoration(
+                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                              borderRadius: BorderRadius.circular(12.0),
+                                                                            ),
                                                                             child:
-                                                                                Container(
-                                                                              decoration: BoxDecoration(
-                                                                                gradient: LinearGradient(
-                                                                                  colors: [
-                                                                                    FlutterFlowTheme.of(context).secondaryText,
-                                                                                    FlutterFlowTheme.of(context).secondary
-                                                                                  ],
-                                                                                  stops: [
-                                                                                    0.0,
-                                                                                    1.0
-                                                                                  ],
-                                                                                  begin: AlignmentDirectional(0.0, -1.0),
-                                                                                  end: AlignmentDirectional(0, 1.0),
-                                                                                ),
-                                                                                borderRadius: BorderRadius.circular(100.0),
-                                                                                border: Border.all(
-                                                                                  color: FlutterFlowTheme.of(context).tertiary,
-                                                                                  width: 2.0,
-                                                                                ),
-                                                                              ),
-                                                                              child: ClipRRect(
-                                                                                borderRadius: BorderRadius.circular(100.0),
-                                                                                child: Image.network(
-                                                                                  'https://picsum.photos/seed/363/600',
-                                                                                  width: 40.0,
-                                                                                  height: 40.0,
-                                                                                  fit: BoxFit.cover,
-                                                                                ),
+                                                                                ClipRRect(
+                                                                              borderRadius: BorderRadius.circular(12.0),
+                                                                              child: Image.network(
+                                                                                'https://picsum.photos/seed/234/600',
+                                                                                width: 300.0,
+                                                                                height: 200.0,
+                                                                                fit: BoxFit.cover,
                                                                               ),
                                                                             ),
                                                                           ),
-                                                                          Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                4.0,
-                                                                                4.0,
-                                                                                4.0,
-                                                                                4.0),
-                                                                            child:
-                                                                                Container(
-                                                                              decoration: BoxDecoration(),
-                                                                              child: Text(
-                                                                                'us',
-                                                                                textAlign: TextAlign.start,
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                      color: FlutterFlowTheme.of(context).primaryBtnText,
-                                                                                      fontSize: 16.0,
-                                                                                      fontWeight: FontWeight.w500,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                    ),
-                                                                              ),
+                                                                          Container(
+                                                                            width:
+                                                                                MediaQuery.sizeOf(context).width * 1.0,
+                                                                            height:
+                                                                                MediaQuery.sizeOf(context).height * 1.0,
+                                                                            decoration:
+                                                                                BoxDecoration(
+                                                                              color: Color(0x8B121212),
+                                                                              borderRadius: BorderRadius.circular(10.0),
                                                                             ),
                                                                           ),
                                                                         ],
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                ],
+                                                                    Align(
+                                                                      alignment: AlignmentDirectional(
+                                                                          0.00,
+                                                                          1.00),
+                                                                      child:
+                                                                          Container(
+                                                                        width:
+                                                                            120.0,
+                                                                        height:
+                                                                            160.0,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(12.0),
+                                                                        ),
+                                                                        child:
+                                                                            Column(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.min,
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.spaceBetween,
+                                                                          crossAxisAlignment:
+                                                                              CrossAxisAlignment.start,
+                                                                          children: [
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(4.0, 4.0, 4.0, 4.0),
+                                                                              child: Container(
+                                                                                decoration: BoxDecoration(
+                                                                                  gradient: LinearGradient(
+                                                                                    colors: [
+                                                                                      FlutterFlowTheme.of(context).secondaryText,
+                                                                                      FlutterFlowTheme.of(context).secondary
+                                                                                    ],
+                                                                                    stops: [
+                                                                                      0.0,
+                                                                                      1.0
+                                                                                    ],
+                                                                                    begin: AlignmentDirectional(0.0, -1.0),
+                                                                                    end: AlignmentDirectional(0, 1.0),
+                                                                                  ),
+                                                                                  borderRadius: BorderRadius.circular(100.0),
+                                                                                  border: Border.all(
+                                                                                    color: FlutterFlowTheme.of(context).tertiary,
+                                                                                    width: 2.0,
+                                                                                  ),
+                                                                                ),
+                                                                                child: ClipRRect(
+                                                                                  borderRadius: BorderRadius.circular(100.0),
+                                                                                  child: Image.network(
+                                                                                    'https://picsum.photos/seed/363/600',
+                                                                                    width: 40.0,
+                                                                                    height: 40.0,
+                                                                                    fit: BoxFit.cover,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(4.0, 4.0, 4.0, 4.0),
+                                                                              child: Container(
+                                                                                decoration: BoxDecoration(),
+                                                                                child: Text(
+                                                                                  'us',
+                                                                                  textAlign: TextAlign.start,
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                        color: FlutterFlowTheme.of(context).primaryBtnText,
+                                                                                        fontSize: 16.0,
+                                                                                        fontWeight: FontWeight.w500,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                      ),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                ),
                                                               ),
                                                             ),
-                                                            Container(
-                                                              decoration:
-                                                                  BoxDecoration(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryBackground,
-                                                              ),
-                                                              child: Stack(
-                                                                children: [
-                                                                  Container(
-                                                                    width:
-                                                                        120.0,
-                                                                    height:
-                                                                        160.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              12.0),
-                                                                      border:
-                                                                          Border
-                                                                              .all(
-                                                                        width:
-                                                                            1.0,
+                                                            InkWell(
+                                                              splashColor: Colors
+                                                                  .transparent,
+                                                              focusColor: Colors
+                                                                  .transparent,
+                                                              hoverColor: Colors
+                                                                  .transparent,
+                                                              highlightColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              onTap: () async {
+                                                                await showModalBottomSheet(
+                                                                  isScrollControlled:
+                                                                      true,
+                                                                  backgroundColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  enableDrag:
+                                                                      false,
+                                                                  context:
+                                                                      context,
+                                                                  builder:
+                                                                      (context) {
+                                                                    return GestureDetector(
+                                                                      onTap: () => _model
+                                                                              .unfocusNode
+                                                                              .canRequestFocus
+                                                                          ? FocusScope.of(context).requestFocus(_model
+                                                                              .unfocusNode)
+                                                                          : FocusScope.of(context)
+                                                                              .unfocus(),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding:
+                                                                            MediaQuery.viewInsetsOf(context),
+                                                                        child:
+                                                                            ViewStoryWidget(),
                                                                       ),
-                                                                    ),
-                                                                    child:
-                                                                        Stack(
-                                                                      children: [
-                                                                        Container(
-                                                                          width:
-                                                                              MediaQuery.sizeOf(context).width * 1.0,
-                                                                          height:
-                                                                              MediaQuery.sizeOf(context).height * 1.0,
-                                                                          decoration:
-                                                                              BoxDecoration(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).secondaryBackground,
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(12.0),
-                                                                          ),
-                                                                          child:
-                                                                              ClipRRect(
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(12.0),
-                                                                            child:
-                                                                                Image.network(
-                                                                              'https://picsum.photos/seed/234/600',
-                                                                              width: 300.0,
-                                                                              height: 200.0,
-                                                                              fit: BoxFit.cover,
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                        Container(
-                                                                          width:
-                                                                              MediaQuery.sizeOf(context).width * 1.0,
-                                                                          height:
-                                                                              MediaQuery.sizeOf(context).height * 1.0,
-                                                                          decoration:
-                                                                              BoxDecoration(
-                                                                            color:
-                                                                                Color(0x8B121212),
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(10.0),
-                                                                          ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                  Align(
-                                                                    alignment:
-                                                                        AlignmentDirectional(
-                                                                            0.00,
-                                                                            1.00),
-                                                                    child:
-                                                                        Container(
+                                                                    );
+                                                                  },
+                                                                ).then((value) =>
+                                                                    safeSetState(
+                                                                        () {}));
+                                                              },
+                                                              child: Container(
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryBackground,
+                                                                ),
+                                                                child: Stack(
+                                                                  children: [
+                                                                    Container(
                                                                       width:
                                                                           120.0,
                                                                       height:
                                                                           160.0,
                                                                       decoration:
                                                                           BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryBackground,
                                                                         borderRadius:
                                                                             BorderRadius.circular(12.0),
+                                                                        border:
+                                                                            Border.all(
+                                                                          width:
+                                                                              1.0,
+                                                                        ),
                                                                       ),
                                                                       child:
-                                                                          Column(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.min,
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.spaceBetween,
-                                                                        crossAxisAlignment:
-                                                                            CrossAxisAlignment.start,
+                                                                          Stack(
                                                                         children: [
-                                                                          Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                4.0,
-                                                                                4.0,
-                                                                                4.0,
-                                                                                4.0),
+                                                                          Container(
+                                                                            width:
+                                                                                MediaQuery.sizeOf(context).width * 1.0,
+                                                                            height:
+                                                                                MediaQuery.sizeOf(context).height * 1.0,
+                                                                            decoration:
+                                                                                BoxDecoration(
+                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                              borderRadius: BorderRadius.circular(12.0),
+                                                                            ),
                                                                             child:
-                                                                                Container(
-                                                                              decoration: BoxDecoration(
-                                                                                gradient: LinearGradient(
-                                                                                  colors: [
-                                                                                    FlutterFlowTheme.of(context).secondaryText,
-                                                                                    FlutterFlowTheme.of(context).secondary
-                                                                                  ],
-                                                                                  stops: [
-                                                                                    0.0,
-                                                                                    1.0
-                                                                                  ],
-                                                                                  begin: AlignmentDirectional(0.0, -1.0),
-                                                                                  end: AlignmentDirectional(0, 1.0),
-                                                                                ),
-                                                                                borderRadius: BorderRadius.circular(100.0),
-                                                                                border: Border.all(
-                                                                                  color: FlutterFlowTheme.of(context).tertiary,
-                                                                                  width: 2.0,
-                                                                                ),
-                                                                              ),
-                                                                              child: ClipRRect(
-                                                                                borderRadius: BorderRadius.circular(100.0),
-                                                                                child: Image.network(
-                                                                                  'https://picsum.photos/seed/363/600',
-                                                                                  width: 40.0,
-                                                                                  height: 40.0,
-                                                                                  fit: BoxFit.cover,
-                                                                                ),
+                                                                                ClipRRect(
+                                                                              borderRadius: BorderRadius.circular(12.0),
+                                                                              child: Image.network(
+                                                                                'https://picsum.photos/seed/234/600',
+                                                                                width: 300.0,
+                                                                                height: 200.0,
+                                                                                fit: BoxFit.cover,
                                                                               ),
                                                                             ),
                                                                           ),
-                                                                          Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                4.0,
-                                                                                4.0,
-                                                                                4.0,
-                                                                                4.0),
-                                                                            child:
-                                                                                Container(
-                                                                              decoration: BoxDecoration(),
-                                                                              child: Text(
-                                                                                'us',
-                                                                                textAlign: TextAlign.start,
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                      color: FlutterFlowTheme.of(context).primaryBtnText,
-                                                                                      fontSize: 16.0,
-                                                                                      fontWeight: FontWeight.w500,
-                                                                                      useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                    ),
-                                                                              ),
+                                                                          Container(
+                                                                            width:
+                                                                                MediaQuery.sizeOf(context).width * 1.0,
+                                                                            height:
+                                                                                MediaQuery.sizeOf(context).height * 1.0,
+                                                                            decoration:
+                                                                                BoxDecoration(
+                                                                              color: Color(0x8B121212),
+                                                                              borderRadius: BorderRadius.circular(10.0),
                                                                             ),
                                                                           ),
                                                                         ],
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                ],
+                                                                    Align(
+                                                                      alignment: AlignmentDirectional(
+                                                                          0.00,
+                                                                          1.00),
+                                                                      child:
+                                                                          Container(
+                                                                        width:
+                                                                            120.0,
+                                                                        height:
+                                                                            160.0,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          borderRadius:
+                                                                              BorderRadius.circular(12.0),
+                                                                        ),
+                                                                        child:
+                                                                            Column(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.min,
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.spaceBetween,
+                                                                          crossAxisAlignment:
+                                                                              CrossAxisAlignment.start,
+                                                                          children: [
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(4.0, 4.0, 4.0, 4.0),
+                                                                              child: Container(
+                                                                                decoration: BoxDecoration(
+                                                                                  gradient: LinearGradient(
+                                                                                    colors: [
+                                                                                      FlutterFlowTheme.of(context).secondaryText,
+                                                                                      FlutterFlowTheme.of(context).secondary
+                                                                                    ],
+                                                                                    stops: [
+                                                                                      0.0,
+                                                                                      1.0
+                                                                                    ],
+                                                                                    begin: AlignmentDirectional(0.0, -1.0),
+                                                                                    end: AlignmentDirectional(0, 1.0),
+                                                                                  ),
+                                                                                  borderRadius: BorderRadius.circular(100.0),
+                                                                                  border: Border.all(
+                                                                                    color: FlutterFlowTheme.of(context).tertiary,
+                                                                                    width: 2.0,
+                                                                                  ),
+                                                                                ),
+                                                                                child: ClipRRect(
+                                                                                  borderRadius: BorderRadius.circular(100.0),
+                                                                                  child: Image.network(
+                                                                                    'https://picsum.photos/seed/363/600',
+                                                                                    width: 40.0,
+                                                                                    height: 40.0,
+                                                                                    fit: BoxFit.cover,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(4.0, 4.0, 4.0, 4.0),
+                                                                              child: Container(
+                                                                                decoration: BoxDecoration(),
+                                                                                child: Text(
+                                                                                  'us',
+                                                                                  textAlign: TextAlign.start,
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                        color: FlutterFlowTheme.of(context).primaryBtnText,
+                                                                                        fontSize: 16.0,
+                                                                                        fontWeight: FontWeight.w500,
+                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                      ),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ],
+                                                                ),
                                                               ),
                                                             ),
                                                           ].divide(SizedBox(
