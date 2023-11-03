@@ -2510,242 +2510,242 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                           context)
                                                                       .dateLabelBg,
                                                                 ),
-                                                                Flexible(
-                                                                  child:
-                                                                      Container(
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
-                                                                    ),
-                                                                    child:
-                                                                        Column(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      children: [
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              12.0,
-                                                                              4.0,
-                                                                              12.0,
-                                                                              8.0),
-                                                                          child:
-                                                                              Container(
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                            ),
-                                                                            alignment:
-                                                                                AlignmentDirectional(-1.00, 0.00),
+                                                                Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  children: [
+                                                                    Container(
+                                                                      width: MediaQuery.sizeOf(context)
+                                                                              .width *
+                                                                          1.0,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryBackground,
+                                                                      ),
+                                                                      child:
+                                                                          Column(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        children: [
+                                                                          Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                12.0,
+                                                                                4.0,
+                                                                                12.0,
+                                                                                8.0),
                                                                             child:
-                                                                                Row(
-                                                                              mainAxisSize: MainAxisSize.max,
-                                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                              children: [
-                                                                                Text(
-                                                                                  'New',
-                                                                                  style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                        fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
-                                                                                        fontWeight: FontWeight.w600,
-                                                                                        useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
-                                                                                      ),
-                                                                                ),
-                                                                                FFButtonWidget(
-                                                                                  onPressed: () async {
-                                                                                    _model.apiResult3ay = await SocialGroup.readAllNotiCall.call(
-                                                                                      userId: FFAppState().idUser,
-                                                                                      accessToken: FFAppState().accessToken,
-                                                                                    );
-                                                                                    if ((_model.apiResult3ay?.succeeded ?? true)) {
-                                                                                      _model.apiResult6a0 = await SocialGroup.getNotiCall.call(
+                                                                                Container(
+                                                                              decoration: BoxDecoration(
+                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                              ),
+                                                                              alignment: AlignmentDirectional(-1.00, 0.00),
+                                                                              child: Row(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                children: [
+                                                                                  Text(
+                                                                                    'New',
+                                                                                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                                                                                          fontFamily: FlutterFlowTheme.of(context).bodyLargeFamily,
+                                                                                          fontWeight: FontWeight.w600,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyLargeFamily),
+                                                                                        ),
+                                                                                  ),
+                                                                                  FFButtonWidget(
+                                                                                    onPressed: () async {
+                                                                                      _model.apiResult3ay = await SocialGroup.readAllNotiCall.call(
                                                                                         userId: FFAppState().idUser,
                                                                                         accessToken: FFAppState().accessToken,
                                                                                       );
-                                                                                      if ((_model.apiResult6a0?.succeeded ?? true)) {
-                                                                                        setState(() {
-                                                                                          FFAppState().resNoti = (_model.apiResult6a0?.jsonBody ?? '');
-                                                                                        });
+                                                                                      if ((_model.apiResult3ay?.succeeded ?? true)) {
+                                                                                        _model.apiResult6a0 = await SocialGroup.getNotiCall.call(
+                                                                                          userId: FFAppState().idUser,
+                                                                                          accessToken: FFAppState().accessToken,
+                                                                                        );
+                                                                                        if ((_model.apiResult6a0?.succeeded ?? true)) {
+                                                                                          setState(() {
+                                                                                            FFAppState().resNoti = (_model.apiResult6a0?.jsonBody ?? '');
+                                                                                          });
+                                                                                        }
                                                                                       }
-                                                                                    }
 
-                                                                                    setState(() {});
-                                                                                  },
-                                                                                  text: 'Read all',
-                                                                                  options: FFButtonOptions(
-                                                                                    height: 40.0,
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                    iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                    color: FlutterFlowTheme.of(context).tertiary,
-                                                                                    textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                          fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
-                                                                                          color: Colors.white,
-                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
-                                                                                        ),
-                                                                                    borderSide: BorderSide(
-                                                                                      color: Colors.transparent,
-                                                                                      width: 1.0,
+                                                                                      setState(() {});
+                                                                                    },
+                                                                                    text: 'Read all',
+                                                                                    options: FFButtonOptions(
+                                                                                      height: 40.0,
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                      color: FlutterFlowTheme.of(context).tertiary,
+                                                                                      textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                            fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
+                                                                                            color: Colors.white,
+                                                                                            useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
+                                                                                          ),
+                                                                                      borderSide: BorderSide(
+                                                                                        color: Colors.transparent,
+                                                                                        width: 1.0,
+                                                                                      ),
+                                                                                      borderRadius: BorderRadius.circular(100.0),
                                                                                     ),
-                                                                                    borderRadius: BorderRadius.circular(100.0),
                                                                                   ),
-                                                                                ),
-                                                                              ],
+                                                                                ],
+                                                                              ),
                                                                             ),
                                                                           ),
-                                                                        ),
-                                                                        Container(
-                                                                          decoration:
-                                                                              BoxDecoration(
-                                                                            color:
-                                                                                Color(0x00D3E6FE),
-                                                                          ),
-                                                                          child:
-                                                                              Builder(
-                                                                            builder:
-                                                                                (context) {
-                                                                              final noti = getJsonField(
-                                                                                FFAppState().resNoti,
-                                                                                r'''$.notys''',
-                                                                              ).toList();
-                                                                              return SingleChildScrollView(
-                                                                                child: Column(
-                                                                                  mainAxisSize: MainAxisSize.max,
-                                                                                  children: List.generate(noti.length, (notiIndex) {
-                                                                                    final notiItem = noti[notiIndex];
-                                                                                    return Container(
-                                                                                      decoration: BoxDecoration(
-                                                                                        color: '${getJsonField(
-                                                                                                  notiItem,
-                                                                                                  r'''$.read''',
-                                                                                                ).toString()}' ==
-                                                                                                '0'
-                                                                                            ? FlutterFlowTheme.of(context).dateLabelBg
-                                                                                            : FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                      ),
-                                                                                      child: Padding(
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
-                                                                                        child: Container(
-                                                                                          decoration: BoxDecoration(
-                                                                                            color: Color(0x00D3E6FE),
-                                                                                          ),
-                                                                                          child: Row(
-                                                                                            mainAxisSize: MainAxisSize.max,
-                                                                                            crossAxisAlignment: CrossAxisAlignment.center,
-                                                                                            children: [
-                                                                                              Container(
-                                                                                                decoration: BoxDecoration(
-                                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                                  borderRadius: BorderRadius.circular(100.0),
-                                                                                                ),
-                                                                                                child: ClipRRect(
-                                                                                                  borderRadius: BorderRadius.circular(100.0),
-                                                                                                  child: Image.network(
-                                                                                                    getJsonField(
+                                                                          Container(
+                                                                            decoration:
+                                                                                BoxDecoration(
+                                                                              color: Color(0x00D3E6FE),
+                                                                            ),
+                                                                            child:
+                                                                                Builder(
+                                                                              builder: (context) {
+                                                                                final noti = getJsonField(
+                                                                                  FFAppState().resNoti,
+                                                                                  r'''$.notys''',
+                                                                                ).toList();
+                                                                                return SingleChildScrollView(
+                                                                                  child: Column(
+                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                    children: List.generate(noti.length, (notiIndex) {
+                                                                                      final notiItem = noti[notiIndex];
+                                                                                      return Container(
+                                                                                        decoration: BoxDecoration(
+                                                                                          color: '${getJsonField(
+                                                                                                    notiItem,
+                                                                                                    r'''$.read''',
+                                                                                                  ).toString()}' ==
+                                                                                                  '0'
+                                                                                              ? FlutterFlowTheme.of(context).dateLabelBg
+                                                                                              : FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                        ),
+                                                                                        child: Padding(
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
+                                                                                          child: Container(
+                                                                                            decoration: BoxDecoration(
+                                                                                              color: Color(0x00D3E6FE),
+                                                                                            ),
+                                                                                            child: Row(
+                                                                                              mainAxisSize: MainAxisSize.max,
+                                                                                              crossAxisAlignment: CrossAxisAlignment.center,
+                                                                                              children: [
+                                                                                                Container(
+                                                                                                  decoration: BoxDecoration(
+                                                                                                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                                    borderRadius: BorderRadius.circular(100.0),
+                                                                                                  ),
+                                                                                                  child: ClipRRect(
+                                                                                                    borderRadius: BorderRadius.circular(100.0),
+                                                                                                    child: Image.network(
+                                                                                                      getJsonField(
+                                                                                                                notiItem,
+                                                                                                                r'''$.avatar''',
+                                                                                                              ) !=
+                                                                                                              null
+                                                                                                          ? getJsonField(
                                                                                                               notiItem,
                                                                                                               r'''$.avatar''',
-                                                                                                            ) !=
-                                                                                                            null
-                                                                                                        ? getJsonField(
-                                                                                                            notiItem,
-                                                                                                            r'''$.avatar''',
-                                                                                                          )
-                                                                                                        : FFAppState().avatarDefault,
-                                                                                                    width: 50.0,
-                                                                                                    height: 50.0,
-                                                                                                    fit: BoxFit.cover,
+                                                                                                            )
+                                                                                                          : FFAppState().avatarDefault,
+                                                                                                      width: 50.0,
+                                                                                                      height: 50.0,
+                                                                                                      fit: BoxFit.cover,
+                                                                                                    ),
                                                                                                   ),
                                                                                                 ),
-                                                                                              ),
-                                                                                              Flexible(
-                                                                                                child: Container(
-                                                                                                  decoration: BoxDecoration(
-                                                                                                    color: Color(0x00D3E6FE),
-                                                                                                  ),
-                                                                                                  child: Column(
-                                                                                                    mainAxisSize: MainAxisSize.max,
-                                                                                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                                                                                    children: [
-                                                                                                      Container(
-                                                                                                        decoration: BoxDecoration(
-                                                                                                          color: Color(0x00FFFFFF),
-                                                                                                        ),
-                                                                                                        child: Row(
-                                                                                                          mainAxisSize: MainAxisSize.max,
-                                                                                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                                          children: [
-                                                                                                            Expanded(
-                                                                                                              child: Container(
-                                                                                                                decoration: BoxDecoration(
-                                                                                                                  color: Color(0x00D3E6FE),
-                                                                                                                ),
-                                                                                                                child: Row(
-                                                                                                                  mainAxisSize: MainAxisSize.max,
-                                                                                                                  children: [
-                                                                                                                    Expanded(
-                                                                                                                      child: Text(
-                                                                                                                        getJsonField(
-                                                                                                                          notiItem,
-                                                                                                                          r'''$.text''',
-                                                                                                                        ).toString(),
-                                                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                                              fontSize: 16.0,
-                                                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                                                            ),
+                                                                                                Flexible(
+                                                                                                  child: Container(
+                                                                                                    decoration: BoxDecoration(
+                                                                                                      color: Color(0x00D3E6FE),
+                                                                                                    ),
+                                                                                                    child: Column(
+                                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                                      children: [
+                                                                                                        Container(
+                                                                                                          decoration: BoxDecoration(
+                                                                                                            color: Color(0x00FFFFFF),
+                                                                                                          ),
+                                                                                                          child: Row(
+                                                                                                            mainAxisSize: MainAxisSize.max,
+                                                                                                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                                            children: [
+                                                                                                              Expanded(
+                                                                                                                child: Container(
+                                                                                                                  decoration: BoxDecoration(
+                                                                                                                    color: Color(0x00D3E6FE),
+                                                                                                                  ),
+                                                                                                                  child: Row(
+                                                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                                                    children: [
+                                                                                                                      Expanded(
+                                                                                                                        child: Text(
+                                                                                                                          getJsonField(
+                                                                                                                            notiItem,
+                                                                                                                            r'''$.text''',
+                                                                                                                          ).toString(),
+                                                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                                                fontSize: 16.0,
+                                                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                                                              ),
+                                                                                                                        ),
                                                                                                                       ),
-                                                                                                                    ),
-                                                                                                                  ].divide(SizedBox(width: 4.0)),
+                                                                                                                    ].divide(SizedBox(width: 4.0)),
+                                                                                                                  ),
                                                                                                                 ),
                                                                                                               ),
-                                                                                                            ),
-                                                                                                            Container(
-                                                                                                              decoration: BoxDecoration(
-                                                                                                                color: Color(0x00FFFFFF),
+                                                                                                              Container(
+                                                                                                                decoration: BoxDecoration(
+                                                                                                                  color: Color(0x00FFFFFF),
+                                                                                                                ),
+                                                                                                                child: Icon(
+                                                                                                                  Icons.keyboard_control,
+                                                                                                                  color: FlutterFlowTheme.of(context).primary,
+                                                                                                                  size: 24.0,
+                                                                                                                ),
                                                                                                               ),
-                                                                                                              child: Icon(
-                                                                                                                Icons.keyboard_control,
-                                                                                                                color: FlutterFlowTheme.of(context).primary,
-                                                                                                                size: 24.0,
-                                                                                                              ),
-                                                                                                            ),
-                                                                                                          ].divide(SizedBox(width: 4.0)),
+                                                                                                            ].divide(SizedBox(width: 4.0)),
+                                                                                                          ),
                                                                                                         ),
-                                                                                                      ),
-                                                                                                      Container(
-                                                                                                        decoration: BoxDecoration(
-                                                                                                          color: Color(0x00FFFFFF),
+                                                                                                        Container(
+                                                                                                          decoration: BoxDecoration(
+                                                                                                            color: Color(0x00FFFFFF),
+                                                                                                          ),
+                                                                                                          child: Text(
+                                                                                                            functions.getTimeAgo(getJsonField(
+                                                                                                              notiItem,
+                                                                                                              r'''$.createdAt''',
+                                                                                                            ).toString()),
+                                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                                  fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                                                  color: FlutterFlowTheme.of(context).alternate,
+                                                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                                                                ),
+                                                                                                          ),
                                                                                                         ),
-                                                                                                        child: Text(
-                                                                                                          functions.getTimeAgo(getJsonField(
-                                                                                                            notiItem,
-                                                                                                            r'''$.createdAt''',
-                                                                                                          ).toString()),
-                                                                                                          style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                                color: FlutterFlowTheme.of(context).alternate,
-                                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
-                                                                                                              ),
-                                                                                                        ),
-                                                                                                      ),
-                                                                                                    ].divide(SizedBox(height: 8.0)),
+                                                                                                      ].divide(SizedBox(height: 8.0)),
+                                                                                                    ),
                                                                                                   ),
                                                                                                 ),
-                                                                                              ),
-                                                                                            ].divide(SizedBox(width: 12.0)),
+                                                                                              ].divide(SizedBox(width: 12.0)),
+                                                                                            ),
                                                                                           ),
                                                                                         ),
-                                                                                      ),
-                                                                                    );
-                                                                                  }),
-                                                                                ),
-                                                                              );
-                                                                            },
+                                                                                      );
+                                                                                    }),
+                                                                                  ),
+                                                                                );
+                                                                              },
+                                                                            ),
                                                                           ),
-                                                                        ),
-                                                                      ],
+                                                                        ],
+                                                                      ),
                                                                     ),
-                                                                  ),
+                                                                  ],
                                                                 ),
                                                               ],
                                                             ),

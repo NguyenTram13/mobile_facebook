@@ -211,6 +211,7 @@ class _QrCodeWidgetState extends State<QrCodeWidget> {
                                         _model.respnseUpload =
                                             (_model.apiResultul3?.jsonBody ??
                                                 '');
+                                        _model.showQR = true;
                                       });
                                     }
 
