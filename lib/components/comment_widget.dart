@@ -143,6 +143,7 @@ class _CommentWidgetState extends State<CommentWidget> {
                 Expanded(
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Expanded(
                         child: Container(
