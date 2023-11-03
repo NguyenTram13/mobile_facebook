@@ -344,6 +344,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "image_downloader",
+      "rootUri": "file:///Users/minh/.pub-cache/hosted/pub.dev/image_downloader-0.31.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "image_picker",
       "rootUri": "file:///Users/minh/.pub-cache/hosted/pub.dev/image_picker-1.0.4",
       "packageUri": "lib/",
@@ -866,7 +872,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-10-25T16:42:56.751225Z",
+  "generated": "2023-11-01T16:29:55.922944Z",
   "generator": "pub",
   "generatorVersion": "3.1.0"
 }

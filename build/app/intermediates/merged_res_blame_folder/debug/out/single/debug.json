@@ -8,6 +8,10 @@
         "source": "com.mycompany.settingdashboard.app-main-17:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
+        "merged": "com.mycompany.settingdashboard.app-merged_res-23:/xml_provider_paths.xml.flat",
+        "source": "com.mycompany.settingdashboard.app-main-17:/xml/provider_paths.xml"
+    },
+    {
         "merged": "com.mycompany.settingdashboard.app-merged_res-23:/mipmap-xxhdpi_ic_launcher.png.flat",
         "source": "com.mycompany.settingdashboard.app-main-17:/mipmap-xxhdpi/ic_launcher.png"
     },

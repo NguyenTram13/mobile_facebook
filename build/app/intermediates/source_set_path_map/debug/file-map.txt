@@ -26,9 +26,10 @@ com.mycompany.settingdashboard.app-packaged_res-24 /Users/minh/Documents/code_bk
 com.mycompany.settingdashboard.app-packaged_res-25 /Users/minh/Documents/code_bk/fb/mobile/build/emoji_picker_flutter/intermediates/packaged_res/debug
 com.mycompany.settingdashboard.app-packaged_res-26 /Users/minh/Documents/code_bk/fb/mobile/build/file_picker/intermediates/packaged_res/debug
 com.mycompany.settingdashboard.app-packaged_res-27 /Users/minh/Documents/code_bk/fb/mobile/build/flutter_plugin_android_lifecycle/intermediates/packaged_res/debug
-com.mycompany.settingdashboard.app-packaged_res-28 /Users/minh/Documents/code_bk/fb/mobile/build/image_picker_android/intermediates/packaged_res/debug
-com.mycompany.settingdashboard.app-packaged_res-29 /Users/minh/Documents/code_bk/fb/mobile/build/path_provider_android/intermediates/packaged_res/debug
-com.mycompany.settingdashboard.app-packaged_res-30 /Users/minh/Documents/code_bk/fb/mobile/build/shared_preferences_android/intermediates/packaged_res/debug
-com.mycompany.settingdashboard.app-packaged_res-31 /Users/minh/Documents/code_bk/fb/mobile/build/sqflite/intermediates/packaged_res/debug
-com.mycompany.settingdashboard.app-packaged_res-32 /Users/minh/Documents/code_bk/fb/mobile/build/url_launcher_android/intermediates/packaged_res/debug
-com.mycompany.settingdashboard.app-packaged_res-33 /Users/minh/Documents/code_bk/fb/mobile/build/video_player_android/intermediates/packaged_res/debug
+com.mycompany.settingdashboard.app-packaged_res-28 /Users/minh/Documents/code_bk/fb/mobile/build/image_downloader/intermediates/packaged_res/debug
+com.mycompany.settingdashboard.app-packaged_res-29 /Users/minh/Documents/code_bk/fb/mobile/build/image_picker_android/intermediates/packaged_res/debug
+com.mycompany.settingdashboard.app-packaged_res-30 /Users/minh/Documents/code_bk/fb/mobile/build/path_provider_android/intermediates/packaged_res/debug
+com.mycompany.settingdashboard.app-packaged_res-31 /Users/minh/Documents/code_bk/fb/mobile/build/shared_preferences_android/intermediates/packaged_res/debug
+com.mycompany.settingdashboard.app-packaged_res-32 /Users/minh/Documents/code_bk/fb/mobile/build/sqflite/intermediates/packaged_res/debug
+com.mycompany.settingdashboard.app-packaged_res-33 /Users/minh/Documents/code_bk/fb/mobile/build/url_launcher_android/intermediates/packaged_res/debug
+com.mycompany.settingdashboard.app-packaged_res-34 /Users/minh/Documents/code_bk/fb/mobile/build/video_player_android/intermediates/packaged_res/debug
