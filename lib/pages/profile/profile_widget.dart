@@ -2134,14 +2134,21 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                     ),
                   ),
                 ),
-              if (_model.loading == true)
-                Expanded(
+              Container(
+                width: MediaQuery.sizeOf(context).width * 1.0,
+                height: MediaQuery.sizeOf(context).height * 1.0,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                ),
+                child: Visibility(
+                  visible: _model.loading == true,
                   child: wrapWithModel(
                     model: _model.loadingModel,
                     updateCallback: () => setState(() {}),
                     child: LoadingWidget(),
                   ),
                 ),
+              ),
             ],
           ),
         ),
