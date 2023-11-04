@@ -1,5 +1,6 @@
 import '/backend/api_requests/api_calls.dart';
 import '/components/component_avatar_widget.dart';
+import '/components/noti_inapp_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -127,381 +128,480 @@ class _MessPageWidgetState extends State<MessPageWidget> {
         ),
         body: SafeArea(
           top: true,
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
+          child: Stack(
             children: [
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
-                child: Container(
-                  decoration: BoxDecoration(),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        SingleChildScrollView(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context).lineColor,
-                                  borderRadius: BorderRadius.circular(100.0),
-                                ),
-                                child: Align(
-                                  alignment: AlignmentDirectional(0.00, 0.00),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        12.0, 0.0, 12.0, 0.0),
-                                    child: TextFormField(
-                                      controller: _model.textController,
-                                      focusNode: _model.textFieldFocusNode,
-                                      autofocus: true,
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        labelText: 'Search...',
-                                        labelStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMediumFamily,
-                                              fontSize: 16.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMediumFamily),
-                                            ),
-                                        hintStyle: FlutterFlowTheme.of(context)
-                                            .labelMedium
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMediumFamily,
-                                              fontSize: 16.0,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .labelMediumFamily),
-                                            ),
-                                        enabledBorder: InputBorder.none,
-                                        focusedBorder: InputBorder.none,
-                                        errorBorder: InputBorder.none,
-                                        focusedErrorBorder: InputBorder.none,
-                                        prefixIcon: Icon(
-                                          Icons.search,
-                                        ),
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyMediumFamily,
-                                            color: FlutterFlowTheme.of(context)
-                                                .alternate,
-                                            fontSize: 16.0,
-                                            useGoogleFonts: GoogleFonts.asMap()
-                                                .containsKey(
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMediumFamily),
-                                          ),
-                                      maxLines: null,
-                                      validator: _model.textControllerValidator
-                                          .asValidator(context),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Column(
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
+                    child: Container(
+                      decoration: BoxDecoration(),
+                      child: SingleChildScrollView(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            SingleChildScrollView(
+                              child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  if (FFAppState().resConversation.length > 0)
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 24.0, 0.0, 24.0),
-                                      child: Container(
-                                        decoration: BoxDecoration(),
-                                        child: Visibility(
-                                          visible: FFAppState()
-                                                  .resConversation
-                                                  .length >
-                                              0,
-                                          child: Builder(
-                                            builder: (context) {
-                                              final conversation = FFAppState()
-                                                  .resConversation
-                                                  .toList();
-                                              return Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                children: List.generate(
-                                                    conversation.length,
-                                                    (conversationIndex) {
-                                                  final conversationItem =
-                                                      conversation[
-                                                          conversationIndex];
-                                                  return InkWell(
-                                                    splashColor:
-                                                        Colors.transparent,
-                                                    focusColor:
-                                                        Colors.transparent,
-                                                    hoverColor:
-                                                        Colors.transparent,
-                                                    highlightColor:
-                                                        Colors.transparent,
-                                                    onTap: () async {
-                                                      context.pushNamed(
-                                                          'ChatPage');
-                                                    },
-                                                    child: Container(
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                      ),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .spaceBetween,
-                                                        children: [
-                                                          Row(
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .lineColor,
+                                      borderRadius:
+                                          BorderRadius.circular(100.0),
+                                    ),
+                                    child: Align(
+                                      alignment:
+                                          AlignmentDirectional(0.00, 0.00),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            12.0, 0.0, 12.0, 0.0),
+                                        child: TextFormField(
+                                          controller: _model.textController,
+                                          focusNode: _model.textFieldFocusNode,
+                                          autofocus: true,
+                                          obscureText: false,
+                                          decoration: InputDecoration(
+                                            labelText: 'Search...',
+                                            labelStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .override(
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMediumFamily,
+                                                      fontSize: 16.0,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMediumFamily),
+                                                    ),
+                                            hintStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .labelMedium
+                                                    .override(
+                                                      fontFamily:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMediumFamily,
+                                                      fontSize: 16.0,
+                                                      useGoogleFonts: GoogleFonts
+                                                              .asMap()
+                                                          .containsKey(
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMediumFamily),
+                                                    ),
+                                            enabledBorder: InputBorder.none,
+                                            focusedBorder: InputBorder.none,
+                                            errorBorder: InputBorder.none,
+                                            focusedErrorBorder:
+                                                InputBorder.none,
+                                            prefixIcon: Icon(
+                                              Icons.search,
+                                            ),
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMediumFamily,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
+                                                fontSize: 16.0,
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMediumFamily),
+                                              ),
+                                          maxLines: null,
+                                          validator: _model
+                                              .textControllerValidator
+                                              .asValidator(context),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      if (FFAppState().resConversation.length >
+                                          0)
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 24.0, 0.0, 24.0),
+                                          child: Container(
+                                            decoration: BoxDecoration(),
+                                            child: Visibility(
+                                              visible: FFAppState()
+                                                      .resConversation
+                                                      .length >
+                                                  0,
+                                              child: Builder(
+                                                builder: (context) {
+                                                  final conversation =
+                                                      FFAppState()
+                                                          .resConversation
+                                                          .toList();
+                                                  return Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: List.generate(
+                                                        conversation.length,
+                                                        (conversationIndex) {
+                                                      final conversationItem =
+                                                          conversation[
+                                                              conversationIndex];
+                                                      return InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          setState(() {
+                                                            FFAppState()
+                                                                    .messageCurrently =
+                                                                getJsonField(
+                                                              conversationItem,
+                                                              r'''$.message_data''',
+                                                              true,
+                                                            )!
+                                                                    .toList()
+                                                                    .cast<
+                                                                        dynamic>();
+                                                          });
+
+                                                          context.pushNamed(
+                                                              'ChatPage');
+
+                                                          _model.apiResultqqg =
+                                                              await SocialGroup
+                                                                  .getProfileCall
+                                                                  .call(
+                                                            accessToken:
+                                                                FFAppState()
+                                                                    .accessToken,
+                                                            idUser:
+                                                                getJsonField(
+                                                              conversationItem,
+                                                              r'''$.userConversation.id''',
+                                                            ),
+                                                          );
+                                                          if ((_model
+                                                                  .apiResultqqg
+                                                                  ?.succeeded ??
+                                                              true)) {
+                                                            FFAppState()
+                                                                .update(() {
+                                                              FFAppState()
+                                                                  .profileMessage = (_model
+                                                                      .apiResultqqg
+                                                                      ?.jsonBody ??
+                                                                  '');
+                                                            });
+                                                          }
+
+                                                          setState(() {});
+                                                        },
+                                                        child: Container(
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryBackground,
+                                                          ),
+                                                          child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
                                                                     .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
                                                             children: [
-                                                              Container(
-                                                                decoration:
-                                                                    BoxDecoration(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              100.0),
-                                                                ),
-                                                                child:
-                                                                    wrapWithModel(
-                                                                  model: _model
-                                                                      .componentAvatarModels
-                                                                      .getModel(
-                                                                    getJsonField(
-                                                                      conversationItem,
-                                                                      r'''$.id''',
-                                                                    ).toString(),
-                                                                    conversationIndex,
-                                                                  ),
-                                                                  updateCallback:
-                                                                      () => setState(
-                                                                          () {}),
-                                                                  child:
-                                                                      ComponentAvatarWidget(
-                                                                    key: Key(
-                                                                      'Keydii_${getJsonField(
-                                                                        conversationItem,
-                                                                        r'''$.id''',
-                                                                      ).toString()}',
-                                                                    ),
-                                                                    image: getJsonField(
-                                                                              conversationItem,
-                                                                              r'''$.userConversation''',
-                                                                            ) !=
-                                                                            null
-                                                                        ? getJsonField(
+                                                              Flexible(
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  children: [
+                                                                    Container(
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(100.0),
+                                                                      ),
+                                                                      child:
+                                                                          wrapWithModel(
+                                                                        model: _model
+                                                                            .componentAvatarModels
+                                                                            .getModel(
+                                                                          getJsonField(
                                                                             conversationItem,
-                                                                            r'''$.userConversation.avatar''',
-                                                                          )
-                                                                        : FFAppState().avatarDefault,
-                                                                    idDetailUser:
-                                                                        getJsonField(
-                                                                      conversationItem,
-                                                                      r'''$.id''',
-                                                                    ),
-                                                                    width: 50.0,
-                                                                    height:
-                                                                        50.0,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                              Column(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                crossAxisAlignment:
-                                                                    CrossAxisAlignment
-                                                                        .start,
-                                                                children: [
-                                                                  Container(
-                                                                    decoration:
-                                                                        BoxDecoration(),
-                                                                    child: Text(
-                                                                      getJsonField(
-                                                                                conversationItem,
-                                                                                r'''$.userConversation''',
-                                                                              ) !=
-                                                                              null
-                                                                          ? '${getJsonField(
-                                                                              conversationItem,
-                                                                              r'''$.userConversation.firstName''',
-                                                                            ).toString()} ${getJsonField(
-                                                                              conversationItem,
-                                                                              r'''$.userConversation.lastName''',
-                                                                            ).toString()}'
-                                                                          : 'N/A',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodySmall,
-                                                                    ),
-                                                                  ),
-                                                                  Container(
-                                                                    decoration:
-                                                                        BoxDecoration(),
-                                                                    child: Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      children:
-                                                                          [
-                                                                        Container(
-                                                                          width:
-                                                                              MediaQuery.sizeOf(context).width * 0.55,
-                                                                          decoration:
-                                                                              BoxDecoration(),
-                                                                          child:
-                                                                              AutoSizeText(
-                                                                            getJsonField(
-                                                                              functions.getLastMessage(getJsonField(
-                                                                                conversationItem,
-                                                                                r'''$.message_data''',
-                                                                                true,
-                                                                              )!),
-                                                                              r'''$.text''',
-                                                                            ).toString().maybeHandleOverflow(
-                                                                                  maxChars: 15,
-                                                                                  replacement: '…',
-                                                                                ),
-                                                                            textAlign:
-                                                                                TextAlign.start,
-                                                                            style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                  fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                  fontSize: 10.0,
-                                                                                  useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
-                                                                                ),
-                                                                          ),
+                                                                            r'''$.id''',
+                                                                          ).toString(),
+                                                                          conversationIndex,
                                                                         ),
-                                                                        Container(
-                                                                          decoration:
-                                                                              BoxDecoration(),
-                                                                          child:
-                                                                              Align(
-                                                                            alignment:
-                                                                                AlignmentDirectional(0.00, 1.00),
+                                                                        updateCallback:
+                                                                            () =>
+                                                                                setState(() {}),
+                                                                        child:
+                                                                            ComponentAvatarWidget(
+                                                                          key:
+                                                                              Key(
+                                                                            'Keydii_${getJsonField(
+                                                                              conversationItem,
+                                                                              r'''$.id''',
+                                                                            ).toString()}',
+                                                                          ),
+                                                                          image: getJsonField(
+                                                                                    conversationItem,
+                                                                                    r'''$.userConversation''',
+                                                                                  ) !=
+                                                                                  null
+                                                                              ? getJsonField(
+                                                                                  conversationItem,
+                                                                                  r'''$.userConversation.avatar''',
+                                                                                )
+                                                                              : FFAppState().avatarDefault,
+                                                                          idDetailUser:
+                                                                              getJsonField(
+                                                                            conversationItem,
+                                                                            r'''$.id''',
+                                                                          ),
+                                                                          width:
+                                                                              50.0,
+                                                                          height:
+                                                                              50.0,
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                    Flexible(
+                                                                      child:
+                                                                          Column(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        crossAxisAlignment:
+                                                                            CrossAxisAlignment.start,
+                                                                        children: [
+                                                                          Container(
+                                                                            decoration:
+                                                                                BoxDecoration(),
                                                                             child:
                                                                                 Text(
-                                                                              functions.getTimeAgo(getJsonField(
-                                                                                functions.getLastMessage(getJsonField(
-                                                                                  conversationItem,
-                                                                                  r'''$.message_data''',
-                                                                                  true,
-                                                                                )!),
-                                                                                r'''$.createdAt''',
-                                                                              ).toString()),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              getJsonField(
+                                                                                        conversationItem,
+                                                                                        r'''$.userConversation''',
+                                                                                      ) !=
+                                                                                      null
+                                                                                  ? '${getJsonField(
+                                                                                      conversationItem,
+                                                                                      r'''$.userConversation.firstName''',
+                                                                                    ).toString()} ${getJsonField(
+                                                                                      conversationItem,
+                                                                                      r'''$.userConversation.lastName''',
+                                                                                    ).toString()}'
+                                                                                  : 'N/A',
+                                                                              style: FlutterFlowTheme.of(context).bodySmall,
                                                                             ),
                                                                           ),
-                                                                        ),
-                                                                      ].divide(SizedBox(
-                                                                              width: 8.0)),
+                                                                          Container(
+                                                                            decoration:
+                                                                                BoxDecoration(),
+                                                                            child:
+                                                                                Row(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              children: [
+                                                                                Container(
+                                                                                  width: MediaQuery.sizeOf(context).width * 0.55,
+                                                                                  decoration: BoxDecoration(),
+                                                                                  child: AutoSizeText(
+                                                                                    functions
+                                                                                                .getLengthArray(getJsonField(
+                                                                                                  conversationItem,
+                                                                                                  r'''$.message_data''',
+                                                                                                  true,
+                                                                                                )!)
+                                                                                                .toString() !=
+                                                                                            '0'
+                                                                                        ? getJsonField(
+                                                                                            functions.getLastMessage(getJsonField(
+                                                                                              conversationItem,
+                                                                                              r'''$.message_data''',
+                                                                                              true,
+                                                                                            )!),
+                                                                                            r'''$.text''',
+                                                                                          ).toString()
+                                                                                        : 'N/A'.maybeHandleOverflow(
+                                                                                            maxChars: 15,
+                                                                                            replacement: '…',
+                                                                                          ),
+                                                                                    textAlign: TextAlign.start,
+                                                                                    style: FlutterFlowTheme.of(context).bodySmall.override(
+                                                                                          fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                          fontSize: 10.0,
+                                                                                          useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
+                                                                                        ),
+                                                                                  ),
+                                                                                ),
+                                                                                Flexible(
+                                                                                  child: Container(
+                                                                                    decoration: BoxDecoration(),
+                                                                                    child: Align(
+                                                                                      alignment: AlignmentDirectional(0.00, 1.00),
+                                                                                      child: Text(
+                                                                                        functions
+                                                                                                    .getLengthArray(getJsonField(
+                                                                                                      conversationItem,
+                                                                                                      r'''$.message_data''',
+                                                                                                      true,
+                                                                                                    )!)
+                                                                                                    .toString() !=
+                                                                                                '0'
+                                                                                            ? functions.getTimeAgo(getJsonField(
+                                                                                                functions.getLastMessage(getJsonField(
+                                                                                                  conversationItem,
+                                                                                                  r'''$.message_data''',
+                                                                                                  true,
+                                                                                                )!),
+                                                                                                r'''$.createdAt''',
+                                                                                              ).toString())
+                                                                                            : 'N/A',
+                                                                                        style: FlutterFlowTheme.of(context).bodySmall.override(
+                                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                              fontSize: 10.0,
+                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
+                                                                                            ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ].divide(SizedBox(width: 8.0)),
+                                                                            ),
+                                                                          ),
+                                                                        ],
+                                                                      ),
                                                                     ),
-                                                                  ),
-                                                                ],
+                                                                  ].divide(SizedBox(
+                                                                      width:
+                                                                          12.0)),
+                                                                ),
                                                               ),
-                                                            ].divide(SizedBox(
-                                                                width: 12.0)),
+                                                            ],
                                                           ),
-                                                        ],
-                                                      ),
-                                                    ),
+                                                        ),
+                                                      );
+                                                    }).divide(
+                                                        SizedBox(height: 16.0)),
                                                   );
-                                                }).divide(
-                                                    SizedBox(height: 16.0)),
-                                              );
-                                            },
+                                                },
+                                              ),
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                    ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 24.0, 0.0, 0.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Expanded(
-                                          child: Container(
-                                            width: MediaQuery.sizeOf(context)
-                                                    .width *
-                                                1.0,
-                                            decoration: BoxDecoration(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryBackground,
-                                            ),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: [
-                                                ClipRRect(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
-                                                  child: Image.network(
-                                                    'https://picsum.photos/seed/585/600',
-                                                    width: 300.0,
-                                                    height: 200.0,
-                                                    fit: BoxFit.cover,
+                                      if (FFAppState().resConversation.length <
+                                          1)
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 24.0, 0.0, 0.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Expanded(
+                                                child: Container(
+                                                  width:
+                                                      MediaQuery.sizeOf(context)
+                                                              .width *
+                                                          1.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                  ),
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                        child: Image.network(
+                                                          'https://picsum.photos/seed/585/600',
+                                                          width: 300.0,
+                                                          height: 200.0,
+                                                          fit: BoxFit.cover,
+                                                        ),
+                                                      ),
+                                                      Text(
+                                                        'No Conversation',
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleMedium
+                                                                .override(
+                                                                  fontFamily: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleMediumFamily,
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .warning,
+                                                                  useGoogleFonts: GoogleFonts
+                                                                          .asMap()
+                                                                      .containsKey(
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .titleMediumFamily),
+                                                                ),
+                                                      ),
+                                                    ].divide(
+                                                        SizedBox(height: 16.0)),
                                                   ),
                                                 ),
-                                                Text(
-                                                  'No Conversation',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .titleMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleMediumFamily,
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .warning,
-                                                        useGoogleFonts: GoogleFonts
-                                                                .asMap()
-                                                            .containsKey(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleMediumFamily),
-                                                      ),
-                                                ),
-                                              ].divide(SizedBox(height: 16.0)),
-                                            ),
+                                              ),
+                                            ],
                                           ),
                                         ),
-                                      ],
-                                    ),
+                                    ],
                                   ),
                                 ],
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
                   ),
-                ),
+                ],
               ),
+              if (FFAppState().turnOnNoti == true)
+                Align(
+                  alignment: AlignmentDirectional(0.00, 0.00),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      wrapWithModel(
+                        model: _model.notiInappModel,
+                        updateCallback: () => setState(() {}),
+                        child: NotiInappWidget(),
+                      ),
+                    ],
+                  ),
+                ),
             ],
           ),
         ),

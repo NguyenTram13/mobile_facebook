@@ -295,6 +295,12 @@ class FFAppState extends ChangeNotifier {
   void insertAtIndexInMessageCurrently(int _index, dynamic _value) {
     _messageCurrently.insert(_index, _value);
   }
+
+  dynamic _profileMessage;
+  dynamic get profileMessage => _profileMessage;
+  set profileMessage(dynamic _value) {
+    _profileMessage = _value;
+  }
 }
 
 LatLng? _latLngFromString(String? val) {

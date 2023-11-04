@@ -2,6 +2,7 @@ import '/backend/api_requests/api_calls.dart';
 import '/components/input_create_post_widget.dart';
 import '/components/list_post_widget.dart';
 import '/components/loading_widget.dart';
+import '/components/noti_inapp_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -60,6 +61,8 @@ class ProfileModel extends FlutterFlowModel<ProfileWidget> {
   late ListPostModel listPostModel;
   // Model for loading component.
   late LoadingModel loadingModel;
+  // Model for noti_inapp component.
+  late NotiInappModel notiInappModel;
 
   /// Initialization and disposal methods.
 
@@ -67,6 +70,7 @@ class ProfileModel extends FlutterFlowModel<ProfileWidget> {
     inputCreatePostModel = createModel(context, () => InputCreatePostModel());
     listPostModel = createModel(context, () => ListPostModel());
     loadingModel = createModel(context, () => LoadingModel());
+    notiInappModel = createModel(context, () => NotiInappModel());
   }
 
   void dispose() {
@@ -74,6 +78,7 @@ class ProfileModel extends FlutterFlowModel<ProfileWidget> {
     inputCreatePostModel.dispose();
     listPostModel.dispose();
     loadingModel.dispose();
+    notiInappModel.dispose();
   }
 
   /// Action blocks are added here.
