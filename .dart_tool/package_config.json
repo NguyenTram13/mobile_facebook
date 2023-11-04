@@ -681,13 +681,13 @@
     },
     {
       "name": "socket_io_client",
-      "rootUri": "file:///Users/minh/.pub-cache/hosted/pub.dev/socket_io_client-1.0.2",
+      "rootUri": "file:///Users/minh/.pub-cache/hosted/pub.dev/socket_io_client-2.0.3+1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "socket_io_common",
-      "rootUri": "file:///Users/minh/.pub-cache/hosted/pub.dev/socket_io_common-1.0.1",
+      "rootUri": "file:///Users/minh/.pub-cache/hosted/pub.dev/socket_io_common-2.0.3",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -908,7 +908,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-11-03T13:12:00.402715Z",
+  "generated": "2023-11-04T09:40:32.884071Z",
   "generator": "pub",
   "generatorVersion": "3.1.0"
 }
