@@ -17,10 +17,12 @@ class SocketIO extends StatefulWidget {
     Key? key,
     this.width,
     this.height,
+    this.userId,
   }) : super(key: key);
 
   final double? width;
   final double? height;
+  final int? userId;
 
   @override
   _SocketIOState createState() => _SocketIOState();
@@ -39,20 +41,27 @@ class _SocketIOState extends State<SocketIO> {
   // init state
   void main() async {
     socket = IO.io(
-        'https://setting-ff.dev-tn.com/',
+        'https://chiase.shoppet.fun/',
         IO.OptionBuilder()
             .setTransports(['websocket']) // for Flutter or Dart VM
             .build());
 
     socket.onConnect((_) {
       print('connect to socket');
-
-      socket.on("setting-style-uddate", (data) async {
-        print("setting-style-uddate");
-        var jsonData = json.decode(data);
-        print(jsonData['data']);
-        setState(() {});
+      socket.on("getMessage", (data) async {
+        print("getMessage $data");
       });
+      socket.on("alertMessage", (data) async {
+        print("alertMessage $data");
+        FFAppState().update(() {
+          FFAppState().alertMessage = data;
+
+          FFAppState().turnOnNoti = true;
+        });
+        await Future.delayed(const Duration(seconds: 4));
+        FFAppState().update(() => {FFAppState().turnOnNoti = false});
+      });
+      socket.emit("addUser", widget.userId);
     });
     print('end socket');
 

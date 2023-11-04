@@ -225,6 +225,76 @@ class FFAppState extends ChangeNotifier {
   set pageHomeSelect(String _value) {
     _pageHomeSelect = _value;
   }
+
+  dynamic _alertMessage;
+  dynamic get alertMessage => _alertMessage;
+  set alertMessage(dynamic _value) {
+    _alertMessage = _value;
+  }
+
+  bool _turnOnNoti = false;
+  bool get turnOnNoti => _turnOnNoti;
+  set turnOnNoti(bool _value) {
+    _turnOnNoti = _value;
+  }
+
+  List<dynamic> _resConversation = [];
+  List<dynamic> get resConversation => _resConversation;
+  set resConversation(List<dynamic> _value) {
+    _resConversation = _value;
+  }
+
+  void addToResConversation(dynamic _value) {
+    _resConversation.add(_value);
+  }
+
+  void removeFromResConversation(dynamic _value) {
+    _resConversation.remove(_value);
+  }
+
+  void removeAtIndexFromResConversation(int _index) {
+    _resConversation.removeAt(_index);
+  }
+
+  void updateResConversationAtIndex(
+    int _index,
+    dynamic Function(dynamic) updateFn,
+  ) {
+    _resConversation[_index] = updateFn(_resConversation[_index]);
+  }
+
+  void insertAtIndexInResConversation(int _index, dynamic _value) {
+    _resConversation.insert(_index, _value);
+  }
+
+  List<dynamic> _messageCurrently = [];
+  List<dynamic> get messageCurrently => _messageCurrently;
+  set messageCurrently(List<dynamic> _value) {
+    _messageCurrently = _value;
+  }
+
+  void addToMessageCurrently(dynamic _value) {
+    _messageCurrently.add(_value);
+  }
+
+  void removeFromMessageCurrently(dynamic _value) {
+    _messageCurrently.remove(_value);
+  }
+
+  void removeAtIndexFromMessageCurrently(int _index) {
+    _messageCurrently.removeAt(_index);
+  }
+
+  void updateMessageCurrentlyAtIndex(
+    int _index,
+    dynamic Function(dynamic) updateFn,
+  ) {
+    _messageCurrently[_index] = updateFn(_messageCurrently[_index]);
+  }
+
+  void insertAtIndexInMessageCurrently(int _index, dynamic _value) {
+    _messageCurrently.insert(_index, _value);
+  }
 }
 
 LatLng? _latLngFromString(String? val) {

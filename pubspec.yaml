@@ -65,7 +65,7 @@ dependencies:
   shared_preferences_ios: 2.1.1
   shared_preferences_platform_interface: 2.2.0
   shared_preferences_web: 2.1.0
-  socket_io_client: ^1.0.2
+  socket_io_client: ^2.0.3+1
   sqflite: 2.2.6
   step_progress_indicator: ^1.0.2
   story_view: ^0.15.0
