@@ -79,7 +79,8 @@ class _QrCodeWidgetState extends State<QrCodeWidget> {
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
                   color: FlutterFlowTheme.of(context).secondary,
-                  fontSize: 22.0,
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.w600,
                   useGoogleFonts: GoogleFonts.asMap().containsKey(
                       FlutterFlowTheme.of(context).headlineMediumFamily),
                 ),
@@ -232,6 +233,7 @@ class _QrCodeWidgetState extends State<QrCodeWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .titleSmallFamily,
                                           color: Colors.white,
+                                          fontSize: 14.0,
                                           useGoogleFonts: GoogleFonts.asMap()
                                               .containsKey(
                                                   FlutterFlowTheme.of(context)
@@ -303,6 +305,7 @@ class _QrCodeWidgetState extends State<QrCodeWidget> {
                                                   .titleSmallFamily,
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
+                                          fontSize: 14.0,
                                           useGoogleFonts: GoogleFonts.asMap()
                                               .containsKey(
                                                   FlutterFlowTheme.of(context)

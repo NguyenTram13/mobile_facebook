@@ -176,7 +176,7 @@ class CreatePostCall {
 {
   "content": "${content}",
   "user_id": ${userId},
-  "images": ${urls}
+  "urls": ${urls}
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'Create Post',

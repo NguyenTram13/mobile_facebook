@@ -79,51 +79,33 @@ class _MessPageWidgetState extends State<MessPageWidget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
           automaticallyImplyLeading: false,
-          title: Container(
-            width: MediaQuery.sizeOf(context).width * 1.0,
-            decoration: BoxDecoration(),
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                FlutterFlowIconButton(
-                  borderColor: Colors.transparent,
-                  borderRadius: 30.0,
-                  borderWidth: 1.0,
-                  buttonSize: 60.0,
-                  icon: Icon(
-                    Icons.arrow_back_rounded,
-                    color: FlutterFlowTheme.of(context).secondaryText,
-                    size: 30.0,
-                  ),
-                  onPressed: () async {
-                    context.pop();
-                  },
-                ),
-                Text(
-                  'Chats',
-                  style: FlutterFlowTheme.of(context).headlineMedium.override(
-                        fontFamily:
-                            FlutterFlowTheme.of(context).headlineMediumFamily,
-                        color: FlutterFlowTheme.of(context).primary,
-                        fontSize: 30.0,
-                        fontWeight: FontWeight.w600,
-                        useGoogleFonts: GoogleFonts.asMap().containsKey(
-                            FlutterFlowTheme.of(context).headlineMediumFamily),
-                      ),
-                ),
-                Opacity(
-                  opacity: 0.0,
-                  child: Text(
-                    'H',
-                    style: FlutterFlowTheme.of(context).bodyMedium,
-                  ),
-                ),
-              ],
+          leading: FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30.0,
+            borderWidth: 1.0,
+            buttonSize: 60.0,
+            icon: Icon(
+              Icons.arrow_back_rounded,
+              color: FlutterFlowTheme.of(context).tertiary,
+              size: 30.0,
             ),
+            onPressed: () async {
+              context.pop();
+            },
+          ),
+          title: Text(
+            'Chats',
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  fontFamily: FlutterFlowTheme.of(context).headlineMediumFamily,
+                  color: FlutterFlowTheme.of(context).primary,
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.w600,
+                  useGoogleFonts: GoogleFonts.asMap().containsKey(
+                      FlutterFlowTheme.of(context).headlineMediumFamily),
+                ),
           ),
           actions: [],
-          centerTitle: false,
+          centerTitle: true,
           elevation: 2.0,
         ),
         body: SafeArea(
@@ -250,10 +232,11 @@ class _MessPageWidgetState extends State<MessPageWidget> {
                                                   0,
                                               child: Builder(
                                                 builder: (context) {
-                                                  final conversation =
-                                                      FFAppState()
+                                                  final conversation = functions
+                                                      .reverseArr(FFAppState()
                                                           .resConversation
-                                                          .toList();
+                                                          .toList())
+                                                      .toList();
                                                   return Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -416,7 +399,11 @@ class _MessPageWidgetState extends State<MessPageWidget> {
                                                                                       r'''$.userConversation.lastName''',
                                                                                     ).toString()}'
                                                                                   : 'N/A',
-                                                                              style: FlutterFlowTheme.of(context).bodySmall,
+                                                                              style: FlutterFlowTheme.of(context).bodySmall.override(
+                                                                                    fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                    fontSize: 14.0,
+                                                                                    useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
+                                                                                  ),
                                                                             ),
                                                                           ),
                                                                           Container(
@@ -439,11 +426,13 @@ class _MessPageWidgetState extends State<MessPageWidget> {
                                                                                                 .toString() !=
                                                                                             '0'
                                                                                         ? getJsonField(
-                                                                                            functions.getLastMessage(getJsonField(
-                                                                                              conversationItem,
-                                                                                              r'''$.message_data''',
-                                                                                              true,
-                                                                                            )!),
+                                                                                            functions.getLastMessage(functions
+                                                                                                .reverseArr(getJsonField(
+                                                                                                  conversationItem,
+                                                                                                  r'''$.message_data''',
+                                                                                                  true,
+                                                                                                )!)
+                                                                                                .toList()),
                                                                                             r'''$.text''',
                                                                                           ).toString()
                                                                                         : 'N/A'.maybeHandleOverflow(
@@ -459,33 +448,40 @@ class _MessPageWidgetState extends State<MessPageWidget> {
                                                                                   ),
                                                                                 ),
                                                                                 Flexible(
-                                                                                  child: Container(
-                                                                                    decoration: BoxDecoration(),
-                                                                                    child: Align(
-                                                                                      alignment: AlignmentDirectional(0.00, 1.00),
-                                                                                      child: Text(
-                                                                                        functions
-                                                                                                    .getLengthArray(getJsonField(
-                                                                                                      conversationItem,
-                                                                                                      r'''$.message_data''',
-                                                                                                      true,
-                                                                                                    )!)
-                                                                                                    .toString() !=
-                                                                                                '0'
-                                                                                            ? functions.getTimeAgo(getJsonField(
-                                                                                                functions.getLastMessage(getJsonField(
-                                                                                                  conversationItem,
-                                                                                                  r'''$.message_data''',
-                                                                                                  true,
-                                                                                                )!),
-                                                                                                r'''$.createdAt''',
-                                                                                              ).toString())
-                                                                                            : 'N/A',
-                                                                                        style: FlutterFlowTheme.of(context).bodySmall.override(
-                                                                                              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
-                                                                                              fontSize: 10.0,
-                                                                                              useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
-                                                                                            ),
+                                                                                  child: Align(
+                                                                                    alignment: AlignmentDirectional(1.00, 0.00),
+                                                                                    child: Container(
+                                                                                      decoration: BoxDecoration(),
+                                                                                      alignment: AlignmentDirectional(1.00, 0.00),
+                                                                                      child: Align(
+                                                                                        alignment: AlignmentDirectional(0.00, 1.00),
+                                                                                        child: Text(
+                                                                                          functions
+                                                                                                      .getLengthArray(getJsonField(
+                                                                                                        conversationItem,
+                                                                                                        r'''$.message_data''',
+                                                                                                        true,
+                                                                                                      )!)
+                                                                                                      .toString() !=
+                                                                                                  '0'
+                                                                                              ? functions.getTimeAgo(getJsonField(
+                                                                                                  functions.getLastMessage(functions
+                                                                                                      .reverseArr(getJsonField(
+                                                                                                        conversationItem,
+                                                                                                        r'''$.message_data''',
+                                                                                                        true,
+                                                                                                      )!)
+                                                                                                      .toList()),
+                                                                                                  r'''$.createdAt''',
+                                                                                                ).toString())
+                                                                                              : 'N/A',
+                                                                                          textAlign: TextAlign.end,
+                                                                                          style: FlutterFlowTheme.of(context).bodySmall.override(
+                                                                                                fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+                                                                                                fontSize: 10.0,
+                                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
+                                                                                              ),
+                                                                                        ),
                                                                                       ),
                                                                                     ),
                                                                                   ),

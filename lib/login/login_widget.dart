@@ -167,10 +167,10 @@ class _LoginWidgetState extends State<LoginWidget>
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 72.0),
                     child: Text(
-                      'brand.ai',
+                      'Social',
                       style: FlutterFlowTheme.of(context).displaySmall.override(
                             fontFamily: 'Plus Jakarta Sans',
-                            color: Color(0xFF101213),
+                            color: FlutterFlowTheme.of(context).tertiary,
                             fontSize: 36.0,
                             fontWeight: FontWeight.w600,
                             useGoogleFonts: GoogleFonts.asMap().containsKey(
@@ -714,7 +714,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                     0.0,
                                                                     0.0),
                                                         color:
-                                                            Color(0xFF4B39EF),
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .tertiary,
                                                         textStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)

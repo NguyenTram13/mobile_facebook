@@ -1,5 +1,7 @@
 import '/backend/api_requests/api_calls.dart';
 import '/components/add_image_post_widget.dart';
+import '/components/component_avatar_widget.dart';
+import '/components/fullname_user_widget.dart';
 import '/components/loading_widget.dart';
 import '/components/more_post_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -43,6 +45,10 @@ class CreatPostModel extends FlutterFlowModel<CreatPostWidget> {
   ApiCallResponse? apiResultxha;
   // Stores action output result for [Backend Call - API (Get Post Home)] action in Button widget.
   ApiCallResponse? apiResult5hr;
+  // Model for componentAvatar component.
+  late ComponentAvatarModel componentAvatarModel;
+  // Model for fullnameUser component.
+  late FullnameUserModel fullnameUserModel;
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode;
   TextEditingController? textController;
@@ -58,10 +64,14 @@ class CreatPostModel extends FlutterFlowModel<CreatPostWidget> {
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {
+    componentAvatarModel = createModel(context, () => ComponentAvatarModel());
+    fullnameUserModel = createModel(context, () => FullnameUserModel());
     loadingModel = createModel(context, () => LoadingModel());
   }
 
   void dispose() {
+    componentAvatarModel.dispose();
+    fullnameUserModel.dispose();
     textFieldFocusNode?.dispose();
     textController?.dispose();
 

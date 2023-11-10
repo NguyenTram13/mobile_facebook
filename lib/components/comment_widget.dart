@@ -112,7 +112,7 @@ class _CommentWidgetState extends State<CommentWidget> {
                                 .override(
                                   fontFamily: FlutterFlowTheme.of(context)
                                       .bodyMediumFamily,
-                                  fontSize: 16.0,
+                                  fontSize: 14.0,
                                   useGoogleFonts: GoogleFonts.asMap()
                                       .containsKey(FlutterFlowTheme.of(context)
                                           .bodyMediumFamily),

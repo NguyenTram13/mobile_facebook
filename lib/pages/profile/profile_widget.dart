@@ -491,6 +491,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                       .titleSmallFamily,
                                                                   color: Colors
                                                                       .white,
+                                                                  fontSize:
+                                                                      14.0,
                                                                   useGoogleFonts: GoogleFonts
                                                                           .asMap()
                                                                       .containsKey(
@@ -543,6 +545,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .primary,
+                                                                  fontSize:
+                                                                      14.0,
                                                                   useGoogleFonts: GoogleFonts
                                                                           .asMap()
                                                                       .containsKey(
@@ -684,6 +688,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                                 FlutterFlowTheme.of(context).titleSmallFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).tertiary,
+                                                                            fontSize:
+                                                                                14.0,
                                                                             useGoogleFonts:
                                                                                 GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                           ),
@@ -824,6 +830,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                                 FlutterFlowTheme.of(context).titleSmallFamily,
                                                                             color:
                                                                                 FlutterFlowTheme.of(context).primary,
+                                                                            fontSize:
+                                                                                14.0,
                                                                             useGoogleFonts:
                                                                                 GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                           ),
@@ -885,6 +893,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
+                                                                      fontSize:
+                                                                          14.0,
                                                                       useGoogleFonts: GoogleFonts
                                                                               .asMap()
                                                                           .containsKey(
@@ -948,6 +958,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                             .titleSmallFamily,
                                                                     color: Colors
                                                                         .white,
+                                                                    fontSize:
+                                                                        14.0,
                                                                     useGoogleFonts: GoogleFonts
                                                                             .asMap()
                                                                         .containsKey(
@@ -1058,7 +1070,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .tertiary,
-                                                          fontSize: 18.0,
+                                                          fontSize: 16.0,
                                                           fontWeight:
                                                               FontWeight.w600,
                                                           useGoogleFonts: GoogleFonts
@@ -1090,7 +1102,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .alternate,
-                                                    fontSize: 18.0,
+                                                    fontSize: 16.0,
                                                     fontWeight: FontWeight.w600,
                                                     useGoogleFonts: GoogleFonts
                                                             .asMap()
@@ -1200,7 +1212,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                                 'Details',
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                      fontSize: 20.0,
+                                                                                      fontSize: 16.0,
                                                                                       fontWeight: FontWeight.bold,
                                                                                       useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                     ),
@@ -1267,7 +1279,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                                                 : 'N/A',
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                  fontSize: 16.0,
+                                                                                                  fontSize: 14.0,
                                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                 ),
                                                                                           ),
@@ -1321,7 +1333,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                                                 : 'N/A',
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                  fontSize: 16.0,
+                                                                                                  fontSize: 14.0,
                                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                 ),
                                                                                           ),
@@ -1354,7 +1366,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                                             'See your About info',
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                  fontSize: 16.0,
+                                                                                                  fontSize: 14.0,
                                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                 ),
                                                                                           ),
@@ -1443,7 +1455,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                                         'Friends',
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                               fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                              fontSize: 20.0,
+                                                                                              fontSize: 16.0,
                                                                                               fontWeight: FontWeight.bold,
                                                                                               useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                             ),
@@ -1455,7 +1467,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                                             functions.getLengthArray(FFAppState().friendProfile.toList()).toString(),
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                  fontSize: 16.0,
+                                                                                                  fontSize: 14.0,
                                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                 ),
                                                                                           ),
@@ -1463,7 +1475,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                                             'Friends',
                                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                   fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
-                                                                                                  fontSize: 16.0,
+                                                                                                  fontSize: 14.0,
                                                                                                   useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                 ),
                                                                                           ),
@@ -1480,7 +1492,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                             fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                             color: FlutterFlowTheme.of(context).tertiary,
-                                                                                            fontSize: 16.0,
+                                                                                            fontSize: 14.0,
                                                                                             fontWeight: FontWeight.w500,
                                                                                             useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                           ),
@@ -1561,7 +1573,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                           fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                                                           color: FlutterFlowTheme.of(context).primary,
-                                                                                                          fontSize: 16.0,
+                                                                                                          fontSize: 14.0,
                                                                                                           fontWeight: FontWeight.w600,
                                                                                                           useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                                                         ),
@@ -1617,6 +1629,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                       fontFamily: FlutterFlowTheme.of(context).titleSmallFamily,
                                                                                       color: FlutterFlowTheme.of(context).primary,
+                                                                                      fontSize: 14.0,
                                                                                       useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                                     ),
                                                                                 elevation: 3.0,
@@ -1718,7 +1731,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                         fontFamily:
                                                                             FlutterFlowTheme.of(context).bodyMediumFamily,
                                                                         fontSize:
-                                                                            20.0,
+                                                                            16.0,
                                                                         fontWeight:
                                                                             FontWeight.bold,
                                                                         useGoogleFonts:
@@ -1743,7 +1756,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .tertiary,
                                                                         fontSize:
-                                                                            16.0,
+                                                                            14.0,
                                                                         useGoogleFonts:
                                                                             GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
                                                                       ),
@@ -1925,7 +1938,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                           color:
                                                                               FlutterFlowTheme.of(context).error,
                                                                           size:
-                                                                              30.0,
+                                                                              24.0,
                                                                         ),
                                                                       ),
                                                                       Container(
@@ -1934,8 +1947,13 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                         child:
                                                                             Text(
                                                                           'Reel',
-                                                                          style:
-                                                                              FlutterFlowTheme.of(context).bodyMedium,
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                fontSize: 12.0,
+                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                              ),
                                                                         ),
                                                                       ),
                                                                     ].divide(SizedBox(
@@ -1989,7 +2007,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                           color:
                                                                               FlutterFlowTheme.of(context).error,
                                                                           size:
-                                                                              30.0,
+                                                                              24.0,
                                                                         ),
                                                                       ),
                                                                       Container(
@@ -1998,8 +2016,13 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                         child:
                                                                             Text(
                                                                           'Live',
-                                                                          style:
-                                                                              FlutterFlowTheme.of(context).bodyMedium,
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyMedium
+                                                                              .override(
+                                                                                fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+                                                                                fontSize: 12.0,
+                                                                                useGoogleFonts: GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                                                                              ),
                                                                         ),
                                                                       ),
                                                                     ].divide(SizedBox(
@@ -2075,6 +2098,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                                                             FlutterFlowTheme.of(context).titleSmallFamily,
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primary,
+                                                                        fontSize:
+                                                                            14.0,
                                                                         useGoogleFonts:
                                                                             GoogleFonts.asMap().containsKey(FlutterFlowTheme.of(context).titleSmallFamily),
                                                                       ),

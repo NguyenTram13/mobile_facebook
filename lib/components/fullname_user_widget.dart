@@ -77,6 +77,7 @@ class _FullnameUserWidgetState extends State<FullnameUserWidget> {
         ),
         style: FlutterFlowTheme.of(context).bodySmall.override(
               fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
+              fontSize: 16.0,
               fontWeight: FontWeight.w600,
               useGoogleFonts: GoogleFonts.asMap()
                   .containsKey(FlutterFlowTheme.of(context).bodySmallFamily),

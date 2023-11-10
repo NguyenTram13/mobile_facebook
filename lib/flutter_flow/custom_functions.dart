@@ -361,3 +361,7 @@ dynamic getLastMessage(List<dynamic> dataMessage) {
   dynamic result = dataMessage[dataMessage.length - 1];
   return result;
 }
+
+List<dynamic> reverseArr(List<dynamic> data) {
+  return data.reversed.toList();
+}

@@ -119,20 +119,23 @@ class _PostWidgetState extends State<PostWidget> {
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              wrapWithModel(
-                                model: _model.fullnameUserModel,
-                                updateCallback: () => setState(() {}),
-                                child: FullnameUserWidget(
-                                  fullName: '${getJsonField(
-                                    widget.data,
-                                    r'''$.user_data.firstName''',
-                                  ).toString()} ${getJsonField(
-                                    widget.data,
-                                    r'''$.user_data.lastName''',
-                                  ).toString()}',
-                                  idDetailUser: getJsonField(
-                                    widget.data,
-                                    r'''$.user_data.id''',
+                              Align(
+                                alignment: AlignmentDirectional(-1.00, 1.00),
+                                child: wrapWithModel(
+                                  model: _model.fullnameUserModel,
+                                  updateCallback: () => setState(() {}),
+                                  child: FullnameUserWidget(
+                                    fullName: '${getJsonField(
+                                      widget.data,
+                                      r'''$.user_data.firstName''',
+                                    ).toString()} ${getJsonField(
+                                      widget.data,
+                                      r'''$.user_data.lastName''',
+                                    ).toString()}',
+                                    idDetailUser: getJsonField(
+                                      widget.data,
+                                      r'''$.user_data.id''',
+                                    ),
                                   ),
                                 ),
                               ),
@@ -152,6 +155,7 @@ class _PostWidgetState extends State<PostWidget> {
                                                   .bodyMediumFamily,
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
+                                          fontSize: 12.0,
                                           useGoogleFonts: GoogleFonts.asMap()
                                               .containsKey(
                                                   FlutterFlowTheme.of(context)
@@ -162,7 +166,7 @@ class _PostWidgetState extends State<PostWidget> {
                                     Icons.public,
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryText,
-                                    size: 24.0,
+                                    size: 20.0,
                                   ),
                                 ],
                               ),
@@ -337,7 +341,7 @@ class _PostWidgetState extends State<PostWidget> {
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily:
                                   FlutterFlowTheme.of(context).bodyMediumFamily,
-                              fontSize: 14.0,
+                              fontSize: 12.0,
                               useGoogleFonts: GoogleFonts.asMap().containsKey(
                                   FlutterFlowTheme.of(context)
                                       .bodyMediumFamily),
@@ -356,11 +360,25 @@ class _PostWidgetState extends State<PostWidget> {
                               true,
                             )!)
                             .toString(),
-                        style: FlutterFlowTheme.of(context).bodyMedium,
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyMediumFamily,
+                              fontSize: 12.0,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily),
+                            ),
                       ),
                       Text(
                         'comments',
-                        style: FlutterFlowTheme.of(context).bodyMedium,
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyMediumFamily,
+                              fontSize: 12.0,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily),
+                            ),
                       ),
                     ].divide(SizedBox(width: 4.0)),
                   ),
@@ -457,7 +475,7 @@ class _PostWidgetState extends State<PostWidget> {
                                 Icons.thumb_up_outlined,
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
-                                size: 30.0,
+                                size: 24.0,
                               ),
                               Text(
                                 'Like',
@@ -466,7 +484,7 @@ class _PostWidgetState extends State<PostWidget> {
                                     .override(
                                       fontFamily: FlutterFlowTheme.of(context)
                                           .bodyMediumFamily,
-                                      fontSize: 16.0,
+                                      fontSize: 14.0,
                                       useGoogleFonts: GoogleFonts.asMap()
                                           .containsKey(
                                               FlutterFlowTheme.of(context)
@@ -482,7 +500,7 @@ class _PostWidgetState extends State<PostWidget> {
                               Icon(
                                 Icons.thumb_up_outlined,
                                 color: FlutterFlowTheme.of(context).tertiary,
-                                size: 30.0,
+                                size: 24.0,
                               ),
                               Text(
                                 'Like',
@@ -493,7 +511,7 @@ class _PostWidgetState extends State<PostWidget> {
                                           .bodyMediumFamily,
                                       color:
                                           FlutterFlowTheme.of(context).tertiary,
-                                      fontSize: 16.0,
+                                      fontSize: 14.0,
                                       useGoogleFonts: GoogleFonts.asMap()
                                           .containsKey(
                                               FlutterFlowTheme.of(context)
@@ -552,7 +570,7 @@ class _PostWidgetState extends State<PostWidget> {
                         Icon(
                           Icons.chat_bubble_outline,
                           color: FlutterFlowTheme.of(context).secondaryText,
-                          size: 30.0,
+                          size: 24.0,
                         ),
                         Text(
                           'Comment',
@@ -561,7 +579,7 @@ class _PostWidgetState extends State<PostWidget> {
                               .override(
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .bodyMediumFamily,
-                                fontSize: 16.0,
+                                fontSize: 14.0,
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
                                     FlutterFlowTheme.of(context)
                                         .bodyMediumFamily),
@@ -576,14 +594,14 @@ class _PostWidgetState extends State<PostWidget> {
                       Icon(
                         Icons.share_outlined,
                         color: FlutterFlowTheme.of(context).secondaryText,
-                        size: 30.0,
+                        size: 24.0,
                       ),
                       Text(
                         'Share',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily:
                                   FlutterFlowTheme.of(context).bodyMediumFamily,
-                              fontSize: 16.0,
+                              fontSize: 14.0,
                               useGoogleFonts: GoogleFonts.asMap().containsKey(
                                   FlutterFlowTheme.of(context)
                                       .bodyMediumFamily),

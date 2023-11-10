@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -238,8 +239,10 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
                                               0,
                                       child: Builder(
                                         builder: (context) {
-                                          final message = FFAppState()
-                                              .messageCurrently
+                                          final message = functions
+                                              .reverseArr(FFAppState()
+                                                  .messageCurrently
+                                                  .toList())
                                               .toList();
                                           return SingleChildScrollView(
                                             child: Column(
@@ -524,7 +527,7 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
                                     Icons.camera_alt,
                                     color:
                                         FlutterFlowTheme.of(context).tertiary,
-                                    size: 32.0,
+                                    size: 24.0,
                                   ),
                                 ),
                                 Container(
@@ -533,7 +536,7 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
                                     Icons.image,
                                     color:
                                         FlutterFlowTheme.of(context).tertiary,
-                                    size: 30.0,
+                                    size: 24.0,
                                   ),
                                 ),
                                 Container(
@@ -542,7 +545,7 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
                                     Icons.mic,
                                     color:
                                         FlutterFlowTheme.of(context).tertiary,
-                                    size: 30.0,
+                                    size: 24.0,
                                   ),
                                 ),
                                 Container(
@@ -638,7 +641,7 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .tertiary,
-                                              size: 24.0,
+                                              size: 20.0,
                                             ),
                                           ),
                                         ],
@@ -657,7 +660,7 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
                                           Icons.thumb_up,
                                           color: FlutterFlowTheme.of(context)
                                               .tertiary,
-                                          size: 30.0,
+                                          size: 24.0,
                                         ),
                                       ),
                                     if (_model.textController.text != null &&
@@ -668,7 +671,7 @@ class _ChatPageWidgetState extends State<ChatPageWidget> {
                                           Icons.send,
                                           color: FlutterFlowTheme.of(context)
                                               .tertiary,
-                                          size: 30.0,
+                                          size: 24.0,
                                         ),
                                       ),
                                   ],
