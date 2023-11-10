@@ -84,7 +84,7 @@ class _SuggestionsFriendWidgetState extends State<SuggestionsFriendWidget> {
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily:
                                 FlutterFlowTheme.of(context).bodyMediumFamily,
-                            fontSize: 20.0,
+                            fontSize: 18.0,
                             fontWeight: FontWeight.w600,
                             useGoogleFonts: GoogleFonts.asMap().containsKey(
                                 FlutterFlowTheme.of(context).bodyMediumFamily),
@@ -190,8 +190,8 @@ class _SuggestionsFriendWidgetState extends State<SuggestionsFriendWidget> {
                                             BorderRadius.circular(100.0),
                                         child: Image.network(
                                           'https://picsum.photos/seed/376/600',
-                                          width: 100.0,
-                                          height: 100.0,
+                                          width: 70.0,
+                                          height: 70.0,
                                           fit: BoxFit.cover,
                                         ),
                                       ),
@@ -229,7 +229,7 @@ class _SuggestionsFriendWidgetState extends State<SuggestionsFriendWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .bodyMediumFamily,
-                                                        fontSize: 16.0,
+                                                        fontSize: 14.0,
                                                         fontWeight:
                                                             FontWeight.w600,
                                                         useGoogleFonts: GoogleFonts
@@ -328,6 +328,8 @@ class _SuggestionsFriendWidgetState extends State<SuggestionsFriendWidget> {
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
+                                                                  fontSize:
+                                                                      12.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w500,
@@ -358,6 +360,8 @@ class _SuggestionsFriendWidgetState extends State<SuggestionsFriendWidget> {
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
+                                                                  fontSize:
+                                                                      12.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w500,

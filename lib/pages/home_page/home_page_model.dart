@@ -4,13 +4,16 @@ import '/components/fullname_user_widget.dart';
 import '/components/input_create_post_widget.dart';
 import '/components/list_post_widget.dart';
 import '/components/loading_widget.dart';
+import '/components/noti_inapp_widget.dart';
 import '/components/search_all_widget.dart';
 import '/components/suggestions_friend_widget.dart';
+import '/components/view_story_widget.dart';
 import '/components/your_friends_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
+import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'home_page_widget.dart' show HomePageWidget;
 import 'package:badges/badges.dart' as badges;
@@ -79,6 +82,8 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
   ApiCallResponse? apiResult2vb;
   // Model for loading component.
   late LoadingModel loadingModel;
+  // Model for noti_inapp component.
+  late NotiInappModel notiInappModel;
 
   /// Initialization and disposal methods.
 
@@ -91,6 +96,7 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
     componentAvatarModel3 = createModel(context, () => ComponentAvatarModel());
     fullnameUserModel = createModel(context, () => FullnameUserModel());
     loadingModel = createModel(context, () => LoadingModel());
+    notiInappModel = createModel(context, () => NotiInappModel());
   }
 
   void dispose() {
@@ -102,6 +108,7 @@ class HomePageModel extends FlutterFlowModel<HomePageWidget> {
     componentAvatarModel3.dispose();
     fullnameUserModel.dispose();
     loadingModel.dispose();
+    notiInappModel.dispose();
   }
 
   /// Action blocks are added here.

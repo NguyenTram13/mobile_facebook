@@ -69,13 +69,18 @@ class _FullnameUserWidgetState extends State<FullnameUserWidget> {
         );
       },
       child: Text(
-        widget.fullName!,
-        style: FlutterFlowTheme.of(context).bodyMedium.override(
-              fontFamily: FlutterFlowTheme.of(context).bodyMediumFamily,
+        valueOrDefault<String>(
+          widget.fullName != null && widget.fullName != ''
+              ? widget.fullName
+              : 'Loading...',
+          'a',
+        ),
+        style: FlutterFlowTheme.of(context).bodySmall.override(
+              fontFamily: FlutterFlowTheme.of(context).bodySmallFamily,
               fontSize: 16.0,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w600,
               useGoogleFonts: GoogleFonts.asMap()
-                  .containsKey(FlutterFlowTheme.of(context).bodyMediumFamily),
+                  .containsKey(FlutterFlowTheme.of(context).bodySmallFamily),
             ),
       ),
     );

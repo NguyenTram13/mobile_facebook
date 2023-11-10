@@ -120,7 +120,7 @@ class _YourFriendsWidgetState extends State<YourFriendsWidget> {
                                 .override(
                                   fontFamily: FlutterFlowTheme.of(context)
                                       .bodyMediumFamily,
-                                  fontSize: 20.0,
+                                  fontSize: 18.0,
                                   fontWeight: FontWeight.w600,
                                   useGoogleFonts: GoogleFonts.asMap()
                                       .containsKey(FlutterFlowTheme.of(context)
@@ -154,17 +154,43 @@ class _YourFriendsWidgetState extends State<YourFriendsWidget> {
                         obscureText: false,
                         decoration: InputDecoration(
                           labelText: 'Search Friends...',
-                          labelStyle: FlutterFlowTheme.of(context).labelMedium,
-                          hintStyle: FlutterFlowTheme.of(context).labelMedium,
+                          labelStyle: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .labelMediumFamily,
+                                fontSize: 14.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .labelMediumFamily),
+                              ),
+                          hintStyle: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .override(
+                                fontFamily: FlutterFlowTheme.of(context)
+                                    .labelMediumFamily,
+                                fontSize: 14.0,
+                                useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                    FlutterFlowTheme.of(context)
+                                        .labelMediumFamily),
+                              ),
                           enabledBorder: InputBorder.none,
                           focusedBorder: InputBorder.none,
                           errorBorder: InputBorder.none,
                           focusedErrorBorder: InputBorder.none,
                           prefixIcon: Icon(
                             Icons.search,
+                            size: 20.0,
                           ),
                         ),
-                        style: FlutterFlowTheme.of(context).bodyMedium,
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily:
+                                  FlutterFlowTheme.of(context).bodyMediumFamily,
+                              fontSize: 14.0,
+                              useGoogleFonts: GoogleFonts.asMap().containsKey(
+                                  FlutterFlowTheme.of(context)
+                                      .bodyMediumFamily),
+                            ),
                         validator:
                             _model.textControllerValidator.asValidator(context),
                       ),
@@ -296,8 +322,8 @@ class _YourFriendsWidgetState extends State<YourFriendsWidget> {
                                             BorderRadius.circular(100.0),
                                         child: Image.network(
                                           'https://picsum.photos/seed/376/600',
-                                          width: 100.0,
-                                          height: 100.0,
+                                          width: 70.0,
+                                          height: 70.0,
                                           fit: BoxFit.cover,
                                         ),
                                       ),
@@ -310,6 +336,8 @@ class _YourFriendsWidgetState extends State<YourFriendsWidget> {
                                         ),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
@@ -380,6 +408,8 @@ class _YourFriendsWidgetState extends State<YourFriendsWidget> {
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
+                                                                  fontSize:
+                                                                      12.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w500,
@@ -410,6 +440,8 @@ class _YourFriendsWidgetState extends State<YourFriendsWidget> {
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
+                                                                  fontSize:
+                                                                      12.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w500,

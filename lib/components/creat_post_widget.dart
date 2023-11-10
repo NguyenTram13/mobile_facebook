@@ -1,5 +1,7 @@
 import '/backend/api_requests/api_calls.dart';
 import '/components/add_image_post_widget.dart';
+import '/components/component_avatar_widget.dart';
+import '/components/fullname_user_widget.dart';
 import '/components/loading_widget.dart';
 import '/components/more_post_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -101,7 +103,7 @@ class _CreatPostWidgetState extends State<CreatPostWidget> {
                               .override(
                                 fontFamily: FlutterFlowTheme.of(context)
                                     .bodyMediumFamily,
-                                fontSize: 20.0,
+                                fontSize: 18.0,
                                 fontWeight: FontWeight.w600,
                                 useGoogleFonts: GoogleFonts.asMap().containsKey(
                                     FlutterFlowTheme.of(context)
@@ -187,6 +189,7 @@ class _CreatPostWidgetState extends State<CreatPostWidget> {
                                       .titleSmallFamily,
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
+                                  fontSize: 14.0,
                                   useGoogleFonts: GoogleFonts.asMap()
                                       .containsKey(FlutterFlowTheme.of(context)
                                           .titleSmallFamily),
@@ -226,13 +229,20 @@ class _CreatPostWidgetState extends State<CreatPostWidget> {
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(100.0),
                                   ),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(100.0),
-                                    child: Image.network(
-                                      'https://images.unsplash.com/photo-1592424002053-21f369ad7fdb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHw0fHxtZWNoYW5pY2FsJTIwa2V5Ym9hcmR8ZW58MHx8fHwxNjk0ODY2ODY1fDA&ixlib=rb-4.0.3&q=80&w=1080',
-                                      width: 70.0,
-                                      height: 70.0,
-                                      fit: BoxFit.cover,
+                                  child: wrapWithModel(
+                                    model: _model.componentAvatarModel,
+                                    updateCallback: () => setState(() {}),
+                                    child: ComponentAvatarWidget(
+                                      image: getJsonField(
+                                        FFAppState().resProfile,
+                                        r'''$.avatar''',
+                                      ),
+                                      idDetailUser: getJsonField(
+                                        FFAppState().resProfile,
+                                        r'''$.id''',
+                                      ),
+                                      width: 50.0,
+                                      height: 50.0,
                                     ),
                                   ),
                                 ),
@@ -242,23 +252,22 @@ class _CreatPostWidgetState extends State<CreatPostWidget> {
                                   children: [
                                     Container(
                                       decoration: BoxDecoration(),
-                                      child: Text(
-                                        'Nguyen Banh Us',
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMediumFamily,
-                                              fontSize: 20.0,
-                                              fontWeight: FontWeight.bold,
-                                              useGoogleFonts: GoogleFonts
-                                                      .asMap()
-                                                  .containsKey(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .bodyMediumFamily),
-                                            ),
+                                      child: wrapWithModel(
+                                        model: _model.fullnameUserModel,
+                                        updateCallback: () => setState(() {}),
+                                        child: FullnameUserWidget(
+                                          fullName: '${getJsonField(
+                                            FFAppState().resProfile,
+                                            r'''$.firstName''',
+                                          ).toString()} ${getJsonField(
+                                            FFAppState().resProfile,
+                                            r'''$.lastName''',
+                                          ).toString()}',
+                                          idDetailUser: getJsonField(
+                                            FFAppState().resProfile,
+                                            r'''$.id''',
+                                          ),
+                                        ),
                                       ),
                                     ),
                                     Row(
@@ -269,12 +278,12 @@ class _CreatPostWidgetState extends State<CreatPostWidget> {
                                             color: FlutterFlowTheme.of(context)
                                                 .dateLabelBg,
                                             borderRadius:
-                                                BorderRadius.circular(10.0),
+                                                BorderRadius.circular(4.0),
                                           ),
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    8.0, 8.0, 8.0, 8.0),
+                                                    4.0, 4.0, 4.0, 4.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
@@ -299,6 +308,7 @@ class _CreatPostWidgetState extends State<CreatPostWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .tertiary,
+                                                        fontSize: 12.0,
                                                         fontWeight:
                                                             FontWeight.w500,
                                                         useGoogleFonts: GoogleFonts
@@ -325,12 +335,12 @@ class _CreatPostWidgetState extends State<CreatPostWidget> {
                                             color: FlutterFlowTheme.of(context)
                                                 .dateLabelBg,
                                             borderRadius:
-                                                BorderRadius.circular(10.0),
+                                                BorderRadius.circular(4.0),
                                           ),
                                           child: Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    8.0, 8.0, 8.0, 8.0),
+                                                    4.0, 4.0, 4.0, 4.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
@@ -355,6 +365,7 @@ class _CreatPostWidgetState extends State<CreatPostWidget> {
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .tertiary,
+                                                        fontSize: 12.0,
                                                         fontWeight:
                                                             FontWeight.w500,
                                                         useGoogleFonts: GoogleFonts
@@ -386,11 +397,11 @@ class _CreatPostWidgetState extends State<CreatPostWidget> {
                                         color: FlutterFlowTheme.of(context)
                                             .dateLabelBg,
                                         borderRadius:
-                                            BorderRadius.circular(10.0),
+                                            BorderRadius.circular(4.0),
                                       ),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            8.0, 8.0, 8.0, 8.0),
+                                            4.0, 4.0, 4.0, 4.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -414,6 +425,7 @@ class _CreatPostWidgetState extends State<CreatPostWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .tertiary,
+                                                    fontSize: 12.0,
                                                     fontWeight: FontWeight.w500,
                                                     useGoogleFonts: GoogleFonts
                                                             .asMap()
@@ -752,7 +764,7 @@ class _CreatPostWidgetState extends State<CreatPostWidget> {
                             child: Icon(
                               Icons.filter_sharp,
                               color: FlutterFlowTheme.of(context).success,
-                              size: 40.0,
+                              size: 30.0,
                             ),
                           ),
                         ),
@@ -762,7 +774,7 @@ class _CreatPostWidgetState extends State<CreatPostWidget> {
                         child: FaIcon(
                           FontAwesomeIcons.tags,
                           color: FlutterFlowTheme.of(context).tertiary,
-                          size: 40.0,
+                          size: 30.0,
                         ),
                       ),
                       Container(
@@ -786,7 +798,7 @@ class _CreatPostWidgetState extends State<CreatPostWidget> {
                           child: Icon(
                             Icons.tag_faces_outlined,
                             color: FlutterFlowTheme.of(context).warning,
-                            size: 40.0,
+                            size: 30.0,
                           ),
                         ),
                       ),
@@ -795,7 +807,7 @@ class _CreatPostWidgetState extends State<CreatPostWidget> {
                         child: Icon(
                           Icons.location_pin,
                           color: FlutterFlowTheme.of(context).error,
-                          size: 40.0,
+                          size: 30.0,
                         ),
                       ),
                       InkWell(
@@ -828,7 +840,7 @@ class _CreatPostWidgetState extends State<CreatPostWidget> {
                             child: Icon(
                               Icons.keyboard_control,
                               color: FlutterFlowTheme.of(context).secondaryText,
-                              size: 40.0,
+                              size: 30.0,
                             ),
                           ),
                         ),

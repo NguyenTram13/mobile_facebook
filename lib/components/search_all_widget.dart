@@ -125,7 +125,7 @@ class _SearchAllWidgetState extends State<SearchAllWidget>
                         fontFamily:
                             FlutterFlowTheme.of(context).labelMediumFamily,
                         color: FlutterFlowTheme.of(context).primary,
-                        fontSize: 20.0,
+                        fontSize: 16.0,
                         fontWeight: FontWeight.w600,
                         useGoogleFonts: GoogleFonts.asMap().containsKey(
                             FlutterFlowTheme.of(context).labelMediumFamily),
@@ -140,7 +140,7 @@ class _SearchAllWidgetState extends State<SearchAllWidget>
                         fontFamily:
                             FlutterFlowTheme.of(context).bodyMediumFamily,
                         color: FlutterFlowTheme.of(context).tertiary,
-                        fontSize: 16.0,
+                        fontSize: 14.0,
                         fontWeight: FontWeight.w500,
                         useGoogleFonts: GoogleFonts.asMap().containsKey(
                             FlutterFlowTheme.of(context).bodyMediumFamily),
@@ -189,7 +189,17 @@ class _SearchAllWidgetState extends State<SearchAllWidget>
                                     child: Text(
                                       'Randy Rudolph',
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyLarge,
+                                          .bodyLarge
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLargeFamily,
+                                            fontSize: 14.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLargeFamily),
+                                          ),
                                     ),
                                   ),
                                 ],
@@ -252,7 +262,17 @@ class _SearchAllWidgetState extends State<SearchAllWidget>
                                     child: Text(
                                       'Randy Rudolph',
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyLarge,
+                                          .bodyLarge
+                                          .override(
+                                            fontFamily:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLargeFamily,
+                                            fontSize: 14.0,
+                                            useGoogleFonts: GoogleFonts.asMap()
+                                                .containsKey(
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLargeFamily),
+                                          ),
                                     ),
                                   ),
                                 ],
