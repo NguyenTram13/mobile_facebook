@@ -1,11 +1,12 @@
 # This is a generated file; do not edit or check into version control.
 connectivity_plus=/home/teknix/.pub-cache/hosted/pub.dev/connectivity_plus-3.0.6/
-emoji_picker_flutter=/home/teknix/.pub-cache/hosted/pub.dev/emoji_picker_flutter-1.6.2/
+emoji_picker_flutter=/home/teknix/.pub-cache/hosted/pub.dev/emoji_picker_flutter-1.6.3/
 file_picker=/home/teknix/.pub-cache/hosted/pub.dev/file_picker-5.2.6/
 file_selector_linux=/home/teknix/.pub-cache/hosted/pub.dev/file_selector_linux-0.9.2+1/
 file_selector_macos=/home/teknix/.pub-cache/hosted/pub.dev/file_selector_macos-0.9.3+3/
 file_selector_windows=/home/teknix/.pub-cache/hosted/pub.dev/file_selector_windows-0.9.3+1/
 flutter_plugin_android_lifecycle=/home/teknix/.pub-cache/hosted/pub.dev/flutter_plugin_android_lifecycle-2.0.9/
+image_downloader=/home/teknix/.pub-cache/hosted/pub.dev/image_downloader-0.31.0/
 image_picker=/home/teknix/.pub-cache/hosted/pub.dev/image_picker-1.0.4/
 image_picker_android=/home/teknix/.pub-cache/hosted/pub.dev/image_picker_android-0.8.8/
 image_picker_for_web=/home/teknix/.pub-cache/hosted/pub.dev/image_picker_for_web-3.0.1/

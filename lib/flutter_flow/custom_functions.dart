@@ -358,6 +358,7 @@ List<String> combieList(
 }
 
 dynamic getLastMessage(List<dynamic> dataMessage) {
+  print("dataMessage.length - 1 ${dataMessage.length - 1}");
   dynamic result = dataMessage[dataMessage.length - 1];
   return result;
 }
