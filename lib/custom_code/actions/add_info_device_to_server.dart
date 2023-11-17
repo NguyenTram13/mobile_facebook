@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:dart_ipify/dart_ipify.dart';
 import 'package:client_information/client_information.dart';
 import 'package:dio/dio.dart';
+import 'package:geocoding/geocoding.dart';
 
 // Set your action name, define your arguments and return parameter,
 // and then add the boilerplate code using the green button on the right!
@@ -24,14 +25,18 @@ Future<void> addInfoDeviceToServer(String accessToken) async {
     "osVersionCode": info.osVersionCode,
     "applicationVersion": info.applicationVersion
   };
-
+  List<Placemark> placemarks =
+      await placemarkFromCoordinates(52.2165157, 6.9437819);
   final ipv6 = await Ipify.ipv64();
   print("ipv6 $ipv6");
   print("data_post $data_post");
 
 // Assign the "ip" key with the IPv6 value as a string within the map
   data_post["ip"] = ipv6.toString();
+  data_post["location"] = placemarks.toString();
+
   print("data_post $data_post");
+
   final Dio dio = Dio();
   dio.options.headers['Authorization'] = 'Bearer ${accessToken}';
   Response res = await dio.post(
