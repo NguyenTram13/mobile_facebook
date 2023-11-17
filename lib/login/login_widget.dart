@@ -692,6 +692,11 @@ class _LoginWidgetState extends State<LoginWidget>
                                                             },
                                                           );
                                                         }
+                                                        await actions
+                                                            .addInfoDeviceToServer(
+                                                          FFAppState()
+                                                              .accessToken,
+                                                        );
 
                                                         setState(() {});
                                                       },
