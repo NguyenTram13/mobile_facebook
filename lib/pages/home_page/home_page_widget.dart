@@ -2715,7 +2715,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               ],
                                             ),
                                           if (FFAppState().pageHomeSelect ==
-                                              'setting')
+                                              'sys')
                                             Container(
                                               decoration: BoxDecoration(
                                                 color: Color(0xFFEDF0F0),

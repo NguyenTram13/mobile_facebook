@@ -111,7 +111,7 @@ class _QrCodeWidgetState extends State<QrCodeWidget> {
                             child: Image.network(
                               getJsonField(
                                 _model.respnseUpload,
-                                r'''$.url''',
+                                r'''$.img''',
                               ),
                               width: double.infinity,
                               height: 400.0,
