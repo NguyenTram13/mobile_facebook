@@ -29,6 +29,7 @@ class _LoginWidgetState extends State<LoginWidget>
   late LoginModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  LatLng? currentUserLocationValue;
 
   final animationsMap = {
     'containerOnPageLoadAnimation': AnimationInfo(
@@ -107,7 +108,12 @@ class _LoginWidgetState extends State<LoginWidget>
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
+      currentUserLocationValue =
+          await getCurrentUserLocation(defaultLocation: LatLng(0.0, 0.0));
       await requestPermission(locationPermission);
+      setState(() {
+        _model.location = currentUserLocationValue;
+      });
     });
 
     _model.tabBarController = TabController(
