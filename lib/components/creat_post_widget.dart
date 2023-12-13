@@ -68,7 +68,7 @@ class _CreatPostWidgetState extends State<CreatPostWidget> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
+                padding: EdgeInsetsDirectional.fromSTEB(12.0, 56.0, 12.0, 12.0),
                 child: Container(
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -524,123 +524,127 @@ class _CreatPostWidgetState extends State<CreatPostWidget> {
                             ),
                           ],
                         ),
-                        Flexible(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              if (_model.loadingUploadImage == false)
-                                Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                  ),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      if ((_model.listImage != null) &&
-                                          (_model.listImageShow.length == 1))
-                                        Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Flexible(
-                                              child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                child: Image.network(
-                                                  getJsonField(
-                                                    _model.listImage,
-                                                    r'''$.arrImgs[0]''',
+                        Row(
+                          children: [
+                            Flexible(
+                              child: Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  if (_model.loadingUploadImage == false)
+                                    Container(
+                                      width: double.infinity,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                      ),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          if ((_model.listImage != null) &&
+                                              (_model.listImageShow.length == 1))
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Flexible(
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(8.0),
+                                                    child: Image.network(
+                                                      getJsonField(
+                                                        _model.listImage,
+                                                        r'''$.arrImgs[0]''',
+                                                      ),
+                                                      width:
+                                                          MediaQuery.sizeOf(context)
+                                                                  .width *
+                                                              1.0,
+                                                      fit: BoxFit.cover,
+                                                    ),
                                                   ),
-                                                  width:
-                                                      MediaQuery.sizeOf(context)
-                                                              .width *
-                                                          1.0,
-                                                  fit: BoxFit.cover,
+                                                ),
+                                              ],
+                                            ),
+                                          if ((_model.listImage != null) &&
+                                              (_model.listImageShow.length > 1))
+                                            Container(
+                                              width: double.infinity,
+                                              height: 400.0,
+                                              decoration: BoxDecoration(
+                                                color: FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
+                                              ),
+                                              child: Padding(
+                                                padding:
+                                                    EdgeInsetsDirectional.fromSTEB(
+                                                        8.0, 8.0, 8.0, 8.0),
+                                                child: Builder(
+                                                  builder: (context) {
+                                                    final image = _model
+                                                        .listImageShow
+                                                        .toList();
+                                                    return GridView.builder(
+                                                      padding: EdgeInsets.zero,
+                                                      gridDelegate:
+                                                          SliverGridDelegateWithFixedCrossAxisCount(
+                                                        crossAxisCount: 2,
+                                                        crossAxisSpacing: 10.0,
+                                                        mainAxisSpacing: 10.0,
+                                                        childAspectRatio: 1.0,
+                                                      ),
+                                                      scrollDirection:
+                                                          Axis.vertical,
+                                                      itemCount: image.length,
+                                                      itemBuilder:
+                                                          (context, imageIndex) {
+                                                        final imageItem =
+                                                            image[imageIndex];
+                                                        return Container(
+                                                          width: 100.0,
+                                                          height: 100.0,
+                                                          decoration: BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryBackground,
+                                                          ),
+                                                          child: ClipRRect(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(8.0),
+                                                            child: Image.network(
+                                                              '${imageItem}',
+                                                              width: 300.0,
+                                                              height: 200.0,
+                                                              fit: BoxFit.cover,
+                                                            ),
+                                                          ),
+                                                        );
+                                                      },
+                                                    );
+                                                  },
                                                 ),
                                               ),
                                             ),
-                                          ],
-                                        ),
-                                      if ((_model.listImage != null) &&
-                                          (_model.listImageShow.length > 1))
-                                        Container(
-                                          width: double.infinity,
-                                          height: 400.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                          ),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    8.0, 8.0, 8.0, 8.0),
-                                            child: Builder(
-                                              builder: (context) {
-                                                final image = _model
-                                                    .listImageShow
-                                                    .toList();
-                                                return GridView.builder(
-                                                  padding: EdgeInsets.zero,
-                                                  gridDelegate:
-                                                      SliverGridDelegateWithFixedCrossAxisCount(
-                                                    crossAxisCount: 2,
-                                                    crossAxisSpacing: 10.0,
-                                                    mainAxisSpacing: 10.0,
-                                                    childAspectRatio: 1.0,
-                                                  ),
-                                                  scrollDirection:
-                                                      Axis.vertical,
-                                                  itemCount: image.length,
-                                                  itemBuilder:
-                                                      (context, imageIndex) {
-                                                    final imageItem =
-                                                        image[imageIndex];
-                                                    return Container(
-                                                      width: 100.0,
-                                                      height: 100.0,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                      ),
-                                                      child: ClipRRect(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(8.0),
-                                                        child: Image.network(
-                                                          '${imageItem}',
-                                                          width: 300.0,
-                                                          height: 200.0,
-                                                          fit: BoxFit.cover,
-                                                        ),
-                                                      ),
-                                                    );
-                                                  },
-                                                );
-                                              },
-                                            ),
-                                          ),
-                                        ),
-                                    ],
-                                  ),
-                                ),
-                              if (_model.loadingUploadImage == true)
-                                Container(
-                                  width: 100.0,
-                                  height: 100.0,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                  ),
-                                  child: wrapWithModel(
-                                    model: _model.loadingModel,
-                                    updateCallback: () => setState(() {}),
-                                    child: LoadingWidget(),
-                                  ),
-                                ),
-                            ],
-                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  if (_model.loadingUploadImage == true)
+                                    Container(
+                                      width: 100.0,
+                                      height: 100.0,
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                      ),
+                                      child: wrapWithModel(
+                                        model: _model.loadingModel,
+                                        updateCallback: () => setState(() {}),
+                                        child: LoadingWidget(),
+                                      ),
+                                    ),
+                                ],
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
